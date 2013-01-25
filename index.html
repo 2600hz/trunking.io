@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>TRUNKING.io</title>
+    <link rel="stylesheet" href="js/plugins/tweets/jquery.tweet.css"/>
     <link rel="stylesheet" href="css/style.css"/>
     <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
     <!-- <link rel="icon" href="images/T_Favicon.ico"/> -->
@@ -64,7 +65,7 @@
                                                         automatically generated for you to test <br>
                                                         the TRUNKING.io system. Click on ‘Make <br>
                                                         A Test Call Now’ to make a 2 minute <br>
-                                                        trial call to any number you'd like. 
+                                                        trial call to any number you'd like.
                                                     </p>
                                                 </span>
                                             </a>
@@ -203,50 +204,42 @@
             <div id="testimonial-wrap">
                 <div id="testimonial-left">
                     <div id="testimonial-1">
-                        <img class="headshot" src="images/BetaTester.jpg" alt="Beta Tester Systems Administrator"/>
-                        <img class="quotemark" src="images/leftquote.png"/>
-                        <div id="info-flush-left">
-                            <p class="quote"><em>Trunking.io has the simplest configuration of any SIP Trunking system I’ve ever used.</em></p>
-                            <h5 class="customer">Beta Tester Systems Administrator</h5>
-                        </div>
+                        <img class="quotemark" src="images/QuoteMark.png"/>
+                        <p class="quote"><em>Trunking.io has the simplest configuration of any SIP Trunking system I’ve ever used.</em></p>
+                        
+                        <h5 class="customer">Beta Tester Systems Administrator</h5>
                     </div>
                 </div>
 
                 <div id="testimonial-right">
                     <div id="testimonial-2" >
-                        <img class="headshot" src="images/CTO.jpg" alt="CTO, Large ISP Voice Group"/>
-                        <img class="quotemark" src="images/leftquote.png"/>
-                        <div id="info-flush-left">
-                            <p class="quote"><em>I can't believe how quickly <br> we were able to get up and <br>running. The difference between<br>Trunking.io and traditional telecom is like Night and Day.</em></p>
-                            <h5 class="customer">CTO, Large ISP Voice Group</h5>
-                        </div>
+                        <img class="quotemark" src="images/QuoteMark.png"/>
+                        <p class="quote"><em>I can't believe how quickly we <br>were able to get up and running. <br>The difference between Trunking.io and traditional telecom is like <br>Night and Day.</em></p>
+                        
+                        <h5 class="customer">CTO, Large ISP Voice Group</h5>
                     </div>
                 </div>
 
                 <!-- ROTATIING TESTIMONIALS THAT ARE NOT VIEWABLE RIGHT AWAY (these populat 'testimonial-left' and 'testimonial-right' in a cycling fashion) -->
                     <div id="testimonial-3" style="display: none;">
-                        <img class="headshot" src="images/AvayaReseller.jpg" alt="Avaya IP Office Reseller"/>
-                        <img class="quotemark" src="images/leftquote.png"/>
-                        <div id="info-flush-left">
-                            <p class="quote"><em>With Trunking.io I can configure and manage all of my Phone Systems in one control panel. No more hold times waiting for a fix, I can control everything in just a few clicks.</em></p>
-                            <h5 class="customer">Avaya IP Office Reseller</h5>
-                        </div>
+                        <img class="quotemark" src="images/QuoteMark.png"/>
+                        <p class="quote"><em>With Trunking.io I can configure and manage all of my Phone Systems in one control panel. No more hold times waiting for a fix, I can control everything in just a few clicks.</em></p>
+                        
+                        <h5 class="customer">Avaya IP Office Reseller</h5>
                     </div>
-                
+
                     <div id="testimonial-4" style="display: none;">
-                        <img class="headshot" src="images/ITmanager.jpg" alt="IT Manager of Major Store Chain"/>
-                        <img class="quotemark" src="images/leftquote.png"/>
-                        <div id="info-flush-left">
-                            <p class="quote"><em>My old SIP Trunking provider hit <br>us with all kinds of hidden fees, setup charges and even hidden contracts! Yuck! Trunking.io gave me honest, straightforward pricing that doesn't change every month. What's not to love?</em></p>
-                            <h5 class="customer">IT Manager of Major Store Chain</h5>
-                        </div>
+                        <img class="quotemark" src="images/QuoteMark.png"/>
+                        <p class="quote"><em>My old SIP Trunking provider hit <br>us with all kinds of hidden fees, setup charges and even hidden contracts! Yuck! Trunking.io gave me honest, straightforward pricing that doesn't change every month. What's not to love?</em></p>
+                        
+                        <h5 class="customer">IT Manager of Major Store Chain</h5>
                     </div>
-                
+
             </div> <!-- end testimonial-wrap -->
         </div> <!-- end testimonial-section -->
 
 
-       <div class="footer">
+        <div class="footer">
        		<div class="content-wrap-footer">
             	<div class="copywrite">
                 	© 2012 <a href="#">Trunking.io</a> <br/>
@@ -265,16 +258,16 @@
 
                 <div class="btn-gettrunks">
                     <a href="html/purchase_trunks.html">Get Trunks</a>
-                </div>  
+                </div>
             </div> <!-- end content-wrap-footer -->
 
             <div id="footer-secondary-wrap">
-                
-                <div id="connect-section">
+
+                <div id="connect-section" class="link-section">
                     <h2 id="signup">Sign up for Newsletter</h2>
                     <img src="images/newsletter.png"/>
 
-                    <div id="subscribe-wrapper" style="display: none;">
+                    <div id="subscribe-wrapper" class="content-section">
                         <div id="subscribe">
                             <form  action="http://2600hz.us2.list-manage1.com/subscribe/post?u=e8893b1d746d0484058a81e83&amp;id=6c9cdbe006" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
 
@@ -291,24 +284,24 @@
 
                 </div><!-- end connect-section -->
 
-                <div id="tweets-section">
+                <div id="tweets-section" class="link-section">
                     <h2 id="read-tweets">Read our recent tweets</h2>
-                    <img src="images/ReadTweets.png"/>
-                
-                    <div id="tweets-wrapper">
+                    <img id="tweeticon" src="images/ReadTweets.png"/>
+
+                    <div id="tweets-wrapper" class="content-section">
                     </div>
                 </div>
 
-                <div id="blog-section">
+                <div id="blog-section" class="link-section">
                     <h2 id="read-blog">Read our recent blog posts</h2>
                     <img src="images/FollowBlog.png"/>
-                
-                    <div id="blog-wrapper">
+
+                    <div id="blog-wrapper" class="content-section">
                     </div>
                 </div>
 
-            </div> <!-- end footer-secondary-wrap -->   
-            
+            </div> <!-- end footer-secondary-wrap -->
+
             <div id="footer-legal-wrap">
                 <div id="terms">
                     <a href="docs/TermsAndConditions.pdf" target="_blank">Terms of Use</a>
@@ -318,10 +311,14 @@
             </div> <!-- end footer-legal-wrap -->
 
        </div> <!-- end footer -->
-    <script type="text/javascript" src="js/jquery.js"></script>
-     <!-- jQuery UI-->
-    <script type="text/javascript" src="js/UI/jquery-ui-1.9.1.custom.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+       <script type="text/javascript" src="js/jquery.js"></script>
+       <!-- jQuery plugins -->
+       <script type="text/javascript" src="js/plugins/tweets/jquery.tweet.js"></script>
+       <!-- Google plugins -->
+       <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+        <!-- jQuery UI-->
+       <script type="text/javascript" src="js/UI/jquery-ui-1.9.1.custom.min.js"></script>
+       <script type="text/javascript" src="js/script.js"></script>
     </div> <!--end container -->
 
 </body>

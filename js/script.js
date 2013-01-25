@@ -1,9 +1,36 @@
 // JavaScript Document
 var THIS = this;
 
+/* Twitter plugin */
+$('#tweets-wrapper').tweet({
+    username: "2600hertz",
+    join_text: "auto",
+    avatar_size: 40,
+    count: 2,
+    auto_join_text_default: "",
+    auto_join_text_ed: "",
+    auto_join_text_ing: "",
+    auto_join_text_reply: "",
+    auto_join_text_url: "",
+    loading_text: "loading tweets..."
+});
+
+/* Tumblr plugin */
+google.load("feeds", "1");
+
+function OnLoad() {
+    var feedControl = new google.feeds.FeedControl();
+    feedControl.setNumEntries(1);
+    feedControl.addFeed("http://blog.2600hz.com/rss");
+    feedControl.draw(document.getElementById("blog-wrapper"));
+}
+
+google.setOnLoadCallback(OnLoad)
+
+/* Beginning of our JS */
 var update_data_trunks = function(trunks_amount) {
     var twoway_price = 29.99,
-        total_amount_twoway = (trunks_amount - parseInt($('#amount_twoway_trunks').attr('data-number') || 0)) * twoway_price,
+        total_amount_twoway = (trunks_amount - parseInt($('#amount_twoway_trunks').attr('data-number') || 1)) * twoway_price,
         current_price = parseFloat($('#totalcost-number').attr('data-price')),
         total_price = (current_price + total_amount_twoway).toFixed(2);
 
@@ -55,7 +82,7 @@ $('#trunk-slider').slider({
     min: 1,
     max: 20,
     range: 'min',
-    value: 0,
+    value: 1,
     slide: function( event, ui ) {
         THIS.update_data_trunks(ui.value);
     }
@@ -78,7 +105,6 @@ $('#search-for-did-btn').on('click', function() {
     });
 
     $('.number-line .remove-did').each(function(k, v) {
-        console.log(v);
         $('.number-wrapper input[type="checkbox"][data-phone_number="'+ $(this).data('phone_number') +'"]').attr('checked', true);
     });
 });
@@ -120,6 +146,15 @@ $('#selected-numbers').on('click', '.remove-did', function() {
     THIS.update_data_dids(--nb_dids);
 });
 
-$('#signup').on('click', function() {
-    $('#subscribe-wrapper').show();
+$('.topic-title').on('click', function() {
+    $('.topic-wrapper').hide();
+
+    $('.topic-wrapper[data-id="'+$(this).data('id')+'"]').show();
 });
+
+$('#blog-section').on('click', '.gf-title a', function(e) {
+    e.preventDefault();
+    window.open($(this).attr('href'));
+});
+
+
