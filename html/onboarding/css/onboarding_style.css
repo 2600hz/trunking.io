@@ -1,0 +1,778 @@
+@charset "UTF-8";
+/* CSS Document */
+/* CSS for site build 2 */
+
+/* **** INDEX PAGE STYLING **** */
+
+body {
+	margin:0
+	}
+
+.container {
+	display: block;
+	}
+
+/* Header */
+
+.row {
+	margin: 0 auto;
+	max-width: 940px;
+	display: block;
+	}
+
+.row::after {
+	content: "";
+	display: block;
+	clear: both;
+
+	}
+
+.logo {
+	float: left;
+	overflow: hidden;
+	margin-top: 24px ;
+	display: block;
+	}
+
+.logo a {
+	height: 100%;
+	display: block;
+	text-decoration: none;
+	}
+
+.logo a img {
+	border-style: none;
+	vertical-align: top;
+	max-width: 100%;
+	height: auto;
+
+	}
+
+#nav {
+	z-index: 99999;
+	float: right;
+	display: block;
+	}
+
+#nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: block;
+	}
+
+#nav ul li{
+	position: relative;
+	float: left;
+	display: list-item;
+	text-align: -webkit-match-parent;
+	color: #333333;
+	font-size: 13px;
+	font-family: 'Maven Pro', helvetica, sans-serif;
+	font-weight: 500;
+	height: 23px;
+	margin-top: 32px;
+	}
+
+#nav ul li a {
+	text-decoration: none;
+	display: block;
+	height: 60px;
+	line-height: 57px;
+	color: #333;
+	margin-top: -17px;
+	}
+
+#nav ul li a:hover {
+	color: #2DBCFF;
+	}
+
+header {
+	height: 80px;
+	background-color: white;
+	padding: 0 10px 0px;
+	display: block;
+	}
+
+
+/* End Header */
+
+/*************************************/
+/* Start BLUE BAR NAVIGATION SECTION */
+/*************************************/
+
+/* Wizard Layout */
+
+.wizard {
+	font-family: 'Maven Pro', sans-serif;
+	}  
+
+.wizard .wizard-top-bar {
+    border-bottom: 8px solid #333;
+    border-top: 2px solid #333;
+    text-align: center;
+	}
+
+.blue-gradient {
+	background: #2dbcff; /* Old browsers */
+	background: -moz-linear-gradient(top, #2dbcff 0%, #009ce5 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2dbcff), color-stop(100%,#009ce5)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #2dbcff 0%,#009ce5 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #2dbcff 0%,#009ce5 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #2dbcff 0%,#009ce5 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #2dbcff 0%,#009ce5 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2dbcff', endColorstr='#009ce5',GradientType=0 ); /* IE6-9 */
+	}
+
+.wizard .wizard-top-bar .steps-wrapper {
+    display: inline-block;
+	}
+
+.wizard .wizard-top-bar .steps-wrapper .step {
+    color: #fff;
+    display: inline-block;
+    padding: 10px 30px;
+    text-align: center;
+    cursor: pointer
+	}
+
+.wizard .wizard-top-bar .steps-wrapper .step.active {
+    box-shadow: 1px 1px 25px #444 inset;
+	}
+
+.wizard .wizard-top-bar .steps-wrapper .step.inactive {
+    cursor: not-allowed;
+	}
+
+.wizard .wizard-top-bar .steps-wrapper .step .step-title {
+    max-width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 150px;
+    font-weight: 500;
+	}
+
+.wizard .wizard-top-bar .steps-wrapper .step .wrapper-icon {
+    background: #fff;
+    border-radius: 50px;
+    border: 1px solid #777;
+    display: inline-block;
+    height: 50px;
+    margin-bottom: 10px;
+    padding: 15px;
+    width: 50px;
+	}
+
+#account-icon {
+	background: url("../img/AccountIcon_blue.png");
+	width: 48px;
+	height: 40px;
+	background-repeat: no-repeat;
+	margin-left: 1px;
+	margin-top: 3px;
+	}
+
+#billing-icon {
+	background: url("../img/BillingIcon.png");
+	width: 49px;
+	height: 39px;
+	background-repeat: no-repeat;
+	margin-top: 7px;
+	margin-left: 1px;
+	}
+
+#confirmation-icon {
+	background: url("../img/CheckIcon.png");
+	width: 44px;
+	height: 44px;
+	background-repeat: no-repeat;
+	margin-top: 4px;
+	margin-left: 2px;
+	}
+
+/*************************************/
+/* Start ONBOARDING CONTENT SECTION */
+/*************************************/
+
+/**** ACCOUNT SET-UP  ****/
+
+.onboarding-content-wrapper{
+	max-width: 940px;
+	margin: auto;
+	font-family: 'Maven Pro',sans-serif;;
+	}
+
+h2.onboarding-title {
+	text-align: center;
+	font-size: 26px;
+	font-weight: 500;
+	color: #2dbcff;
+	margin-top: 60px;
+	margin-bottom: 50px;
+	}
+
+#account-details {
+	width: 515px;
+	margin: auto;
+	background-color: #eeeeee;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	}
+
+.onboarding-form {
+	border: none;
+	padding-top: 40px;
+	padding-bottom: 25px;
+	}
+
+.line-wrap {
+	margin-bottom: 22px;
+	}
+
+.onboarding-form input {
+	width: 185px;
+	height: 25px;
+	margin-left: 15px;
+	padding-left: 10px;
+	font-size: 12px;
+	border-radius: 3px;
+	border: 1px solid #cccccc;
+	border-top: 1px inset #bbbbbb;
+	border-left: 1px inset #bbbbbb;
+	}
+
+.label-wrap {
+	width: 170px;
+	display: inline-block;
+	text-align: right;
+	color: #555555;
+	}
+
+.required {
+	font-family: 'helvetica', sans-serif;
+	color: #F33;
+	font-size: 14px;
+	}
+
+/**** BILLING SET-UP  ****/
+
+#billing-details {
+	width: 515px;
+	margin: auto;
+	background-color: #eeeeee;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	}
+
+#cardtype-image {
+	height: 28px;
+	width: 45px;
+	display: inline-block;
+	background-image: url("../img/Mastercard.png");
+	background-repeat: no-repeat;
+	margin-bottom: -9px;
+	margin-left: 5px;
+	}
+
+/**** CVV INFO POPUP ****/
+
+#cvv-info {
+	display: inline;
+	margin-right: 5px;
+	float: left;
+	margin-left: 102px;
+	margin-top: 2px;
+	}
+
+.cvv-more-info {
+	background: #bbbbbb; 
+	-moz-border-radius:42px;
+	-webkit-border-radius:42px;
+	border-radius:42px;
+	border:1px solid #bbbbbb;
+	display:inline-block;
+	color: white;
+	font-family:arial;
+	font-size:11px;
+	font-weight:600;
+	padding:1px 4px;
+	text-decoration:none;
+	/*text-shadow:1px 1px 0px #555555;*/
+	}
+
+.cvv-more-info:hover {
+	background: #009ce5; /* Old browsers */
+	background: -moz-linear-gradient(top, #009ce5 0%, #2dbcff 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#009ce5), color-stop(100%,#2dbcff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #009ce5 0%,#2dbcff 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #009ce5 0%,#2dbcff 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #009ce5 0%,#2dbcff 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #009ce5 0%,#2dbcff 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009ce5', endColorstr='#2dbcff',GradientType=0 ); /* IE6-9 */
+
+	border:1px solid #009ec5;
+	color: white;
+	}
+
+.cvv-more-info span {
+	display: none;
+	width: 226px;
+	height: 238px;
+	background-color: white;
+	border: 1px solid #999999;
+	margin-top: 20px;
+	margin-left: -192px;
+
+	-moz-box-shadow: 0px 0px 15px 1px #999999;
+	-webkit-box-shadow: 0px 0px 15px 1px #999999;
+	box-shadow: 0px 0px 15px 1px #999999;
+	position: relative;
+	}
+
+.cvv-more-info span:after {
+	content:"";
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 9px solid white;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -9px;
+    left: 186px;
+	}
+
+.cvv-more-info span:before {
+	content:"";
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #999999;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -10px;
+    left: 185px;
+	}
+
+.cvv-more-info:hover span {
+	display: block;
+	position: absolute;
+	}
+
+.cvv-more-info span h5 {
+	font-family: 'maven pro', sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	color: #333333;
+	text-shadow: none;
+	margin-top: 10px;
+	margin-left: 15px;
+	float: left;
+	}
+
+.cvv-more-info span p {
+	color: #333333;
+	font-family: 'Maven Pro', sans-serif;
+	font-size: 12px;
+	text-shadow: none;
+	margin-left: 15px;
+	line-height: 17px;
+	font-weight: lighter;
+	margin-top: -15px;
+	}
+
+/************************/
+
+.horizontal-line {
+	border-top: 1px solid #bbbbbb;
+	border-bottom: 1px solid white;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	}
+
+.onboarding-form h4 {
+	color: #555555;
+	font-weight: 500;
+	text-align: center;
+	margin-bottom: 40px;
+	}
+
+.onboarding-form h4 span {
+	font-size: 13px;
+	font-weight: 400;
+	letter-spacing: .09em;
+	color: #777;
+	}
+
+#billing-country {
+	width: 198px;
+	margin-left: 15px;
+	font-size: 16px;
+	}
+
+.side-note {
+	font-size: 13px;
+	font-weight: 400;
+	color: #777;
+	width: 700px;
+	margin: auto;
+	text-align: center;
+	margin-bottom: 30px;
+	line-height: 21px;
+	}
+
+#secure-img-wrapper {
+	text-align: center;
+	margin-bottom: 30px;
+	}
+
+img#secure-lock {
+	margin-right: 20px;
+	}
+
+/****  CONFIRMATION STEP 3  ****/
+
+#setup-confirmation-wrapper {
+
+	}
+
+#confirmation-details {
+	padding-left: 119px;
+	margin-bottom: 60px;
+	}
+
+#info-review-wrapper {
+	width: 275px;
+	display: inline-block;
+	border-right: 1px solid #999999;
+	padding-right: 47px;
+	}
+
+#info-review-top {
+	width: 275px;
+	margin-bottom: 35px;
+	}
+
+#info-review-bottom {
+	width: 275px;
+	}
+
+h3.review-title {
+	font-size: 18px;
+	font-weight: 500;
+	margin-top: 0px;
+	margin-bottom: 15px;
+	}
+
+h3.review-title a {
+	float: right;
+	font-size: 12px;
+	text-decoration: none;
+	color: #666;
+	margin-top: 4px;
+	}
+
+h3.review-title a:hover {
+	color: #ff3333;
+	}
+
+ul.review-list {
+	list-style: none;
+	font-size: 14px;
+	color: #333333;
+	padding-left: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 20px;
+	}
+
+/************ REVIEW WINDOW (right) *************/
+
+#order-review-wrapper {
+	width: 325px;
+	display: inline-block;
+	float: right;
+	margin-right: 118px;
+	}
+
+#order-review {
+	background-color: white;
+	border: 1px solid #999;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	width: 322px;
+	}
+
+#totalcost-title {
+	color: black;
+	font-family: 'Maven Pro', sans-serif;
+	font-size: 20px;
+	font-weight: lighter;
+	text-align: center;
+	width: 310px;
+	margin: auto;
+	margin-top: 5px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	background-color: #DDD;
+	}
+
+#totalcost-number {
+	font-size: 48px;
+	margin-top: 5px;
+	color: #666;
+	font-family: 'Maven Pro', sans-serif;
+	font-weight: 600;
+	text-shadow: 0px -2px 0px rgba(0, 0, 0, 1);
+	letter-spacing: -3px;
+	text-align: center;
+	}
+
+#ordersummary-title {
+	color: black;
+	font-family: 'Maven Pro', sans-serif;
+	font-size: 20px;
+	font-weight: lighter;
+	text-align: center;
+	width: 310px;
+	margin: auto;
+	margin-top: 15px;
+	padding-top: 3px;
+	padding-bottom: 5px;
+	background-color: #DDD;
+	}
+
+#ordersummary-list {
+	font-family: 'Maven Pro', sans-serif;
+	font-size: 14px;
+	list-style: none;
+	line-height: 23px;
+	color: #444;
+	padding-left: 67px;
+	margin-bottom: 8px;
+	}
+
+/************************************/
+
+#confirmation-paragraph {
+	font-size: 13px;
+	font-weight: 400;
+	color: #777;
+	width: 700px;
+	margin: auto;
+	text-align: center;
+	margin-bottom: 40px;
+	line-height: 21px;
+	}
+
+#confirmation-paragraph a {
+	text-decoration: none;
+	color: #ff3333;
+	}
+
+#confirmation-paragraph a:hover {
+	text-decoration: underline;
+	}
+
+button#confirm-complete {
+	cursor: pointer;
+	width: 250px;
+	height: 50px;
+	border: 1px solid #7EB235;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+
+	background: #9FED31; /* Old browsers */
+	background: -moz-linear-gradient(top, #9FED31 0%, #73b714 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9FED31), color-stop(100%,#73b714)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #9FED31 0%,#73b714 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #9FED31 0%,#73b714 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #9FED31 0%,#73b714 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #9FED31 0%,#73b714 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9FED31', endColorstr='#73b714',GradientType=0 ); /* IE6-9 */
+	font-size: 16px;
+	color: #006327;
+	margin-left: 341px;
+	margin-bottom: 40px;
+	}
+
+button#confirm-complete:hover {
+	background: #73b714; /* Old browsers */
+	background: -moz-linear-gradient(top, #73b714 0%, #9FED31 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#73b714), color-stop(100%,#9FED31)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #73b714 0%,#9FED31 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #73b714 0%,#9FED31 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #73b714 0%,#9FED31 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #73b714 0%,#9FED31 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73b714', endColorstr='#9FED31',GradientType=0 ); /* IE6-9 */
+	}
+
+button#confirm-complete:active {
+	-moz-box-shadow: inset 0px 0px 10px 0px #34A512;
+	-webkit-box-shadow: inset 0px 0px 10px 0px #34A512;
+	box-shadow: inset 0px 0px 10px 0px #34A512;
+	}
+
+/****  BACK/ NEXT ARROW NAVIGATION  ****/
+
+#progress-wrap {
+	height: 75px;
+	font-family: 'Maven Pro',sans-serif;
+	margin-top: -45px;
+	margin-bottom: 30px;
+	}
+
+#go-back {
+	width: 100px;
+	height: 52px;
+	float: left;
+	display: inline-block;
+	position: relative;
+	}
+
+#go-back a {
+	position: absolute;
+	width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    text-decoration:none; /* Makes sure the link doesn't get underlined */
+    z-index: 1; /* raises anchor tag above everything else in div */
+    background-color:white; /*workaround to make clickable in IE */
+    opacity: 0; /*workaround to make clickable in IE */
+    filter: alpha(opacity=1); /*workaround to make clickable in IE */
+	}
+
+#go-back span {
+	float: right;
+	margin-top: 11px;
+	font-size: 18px;
+	margin-right: 12px;
+	}
+
+#back-arrow {
+	height: 0;
+	width: 0;
+	border-right: 36px solid #dddddd;
+	border-top: 22px solid transparent;
+	border-bottom: 22px solid transparent;
+	
+	float: left;
+	}
+
+#go-next {
+	width: 100px;
+	height: 52px;
+	float: right;
+	display: inline-block;
+	position: relative;
+	}
+
+#go-next a {
+	position: absolute;
+	width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    text-decoration:none; /* Makes sure the link doesn't get underlined */
+    z-index: 1; /* raises anchor tag above everything else in div */
+    background-color:white; /*workaround to make clickable in IE */
+    opacity: 0; /*workaround to make clickable in IE */
+    filter: alpha(opacity=1); /*workaround to make clickable in IE */
+	}
+
+#next-arrow {
+	height: 0;
+	width: 0;
+	border-left: 36px solid #dddddd;
+	border-top: 22px solid transparent;
+	border-bottom: 22px solid transparent;
+	
+	float: right;
+	}
+
+#next-arrow:hover {
+	height: 0;
+	width: 0;
+	border-left: 36px solid #2dbcff;
+	border-top: 22px solid transparent;
+	border-bottom: 22px solid transparent;
+	
+	float: right;
+	}
+
+#go-next span {
+	float: left;
+	margin-top: 11px;
+	font-size: 18px;
+	margin-left: 12px;
+	}
+
+/***************/
+
+/**** ONBOARDING FOOTER  ****/
+
+#onboarding-footer {
+	height: 40px;
+	background-color: #222222;
+	}
+
+#footer-legal-wrap {
+	font-size: 11px;
+	font-family: 'Maven Pro', sans-serif;
+	font-weight: 300;
+	color: white;
+	text-shadow: 1px 2px 1px black;
+	max-width: 940px;
+	margin: auto;
+	height: 20px;
+	}
+
+#footer-legal-wrap a {
+	text-decoration: none;
+	color: white;
+	font-weight: 700;
+	text-shadow: 1px 2px 1px black;
+	}
+
+#footer-legal-wrap a:hover {
+	color: rgb(240, 90, 50);
+	}
+
+#p-onboarding {
+	float: right;
+	color: #999;
+	margin: 0;
+	margin-top: 14px;
+	}
+
+#terms-onboarding {
+	font-size: 11px;
+	font-family: 'Maven Pro', sans-serif;
+	font-weight: 300;
+	color: white;
+	float: left;
+	margin-top: 14px;
+	text-shadow: 1px 2px 1px black;
+	}
+
+#terms-onboarding a {
+	text-decoration: none;
+	font-size: 11px;
+	font-family: 'Maven Pro', sans-serif;
+	font-weight: 500;
+	color: white;
+	}
+
+#terms-onboarding a:hover {
+	color: #ff3333;
+	}
+
+
+
+

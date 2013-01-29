@@ -24,9 +24,7 @@ body {
 	content: "";
 	display: block;
 	clear: both;
-
 	}
-
 
 .logo {
 	float: left;
@@ -1585,7 +1583,7 @@ input#mc-embedded-subscribe:hover {
 	font-size: 16px;
 	font-weight: 500;
 	margin-left: 215px;
-	margin-top: 13px;
+	margin-top: 21px;
 	}
 
 #view-rate-sheet:hover {

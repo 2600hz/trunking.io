@@ -1,11 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>TRUNKING.io Per-Minute Pricing</title>
-<link rel="stylesheet" href="../css/style.css"/>
-<link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
-<!-- <link rel="icon" href="images/T_Favicon.ico"/> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>TRUNKING.io Per-Minute Pricing</title>
+    <link rel="stylesheet" href="../js/plugins/tweets/jquery.tweet.css"/>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+    <!-- <link rel="icon" href="images/T_Favicon.ico"/> -->
 </head>
 
 <body>
@@ -91,7 +92,7 @@
 
 
 
-                        <a href="../html/purchase_payasyougo.html" class="btn-buytrunks" id="btn-getstarted">Get Started</a>
+                        <a href="purchase_payasyougo.html" class="btn-buytrunks" id="btn-getstarted">Get Started</a>
 
                         <div id="btn-getstarted-title">
                             Free to Create an Account
@@ -388,7 +389,7 @@
                         </div>
                     </div>
 
-                    <a href="#" id="view-rate-sheet">View Entire Rate Sheet &raquo;</a>
+                    <a href="../docs/InternationalRateSheet.pdf" target="_blank" id="view-rate-sheet">View Entire Rate Sheet &raquo;</a>
 
                 </div> <!-- end international-rates -->
 
@@ -419,11 +420,11 @@
 
             <div id="footer-secondary-wrap">
 
-                <div id="connect-section">
+                <div id="connect-section" class="link-section">
                     <h2 id="signup">Sign up for Newsletter</h2>
                     <img src="../images/newsletter.png"/>
 
-                    <div id="subscribe-wrapper" style="display: none;">
+                    <div id="subscribe-wrapper" class="content-section">
                         <div id="subscribe">
                             <form  action="http://2600hz.us2.list-manage1.com/subscribe/post?u=e8893b1d746d0484058a81e83&amp;id=6c9cdbe006" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
 
@@ -440,19 +441,19 @@
 
                 </div><!-- end connect-section -->
 
-                <div id="tweets-section">
+                <div id="tweets-section" class="link-section">
                     <h2 id="read-tweets">Read our recent tweets</h2>
-                    <img src="../images/ReadTweets.png"/>
+                    <img id="tweeticon" src="../images/ReadTweets.png"/>
 
-                    <div id="tweets-wrapper">
+                    <div id="tweets-wrapper" class="content-section">
                     </div>
                 </div>
 
-                <div id="blog-section">
+                <div id="blog-section" class="link-section">
                     <h2 id="read-blog">Read our recent blog posts</h2>
                     <img src="../images/FollowBlog.png"/>
 
-                    <div id="blog-wrapper">
+                    <div id="blog-wrapper" class="content-section">
                     </div>
                 </div>
 
@@ -460,22 +461,21 @@
 
             <div id="footer-legal-wrap">
                 <div id="terms">
-                    <a href="#">Terms of Use</a>
+                    <a href="../docs/TermsAndConditions.pdf" target="_blank">Terms and Conditions</a>
                 </div>
 
                 <p>Powered by <a href="http://2600hz.com" target="_blank">2600hz</a></p>
             </div> <!-- end footer-legal-wrap -->
 
        </div> <!-- end footer -->
-
+       <script type="text/javascript" src="../js/jquery.js"></script>
+       <!-- jQuery plugins -->
+       <script type="text/javascript" src="../js/plugins/tweets/jquery.tweet.js"></script>
+       <!-- Google plugins -->
+       <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+        <!-- jQuery UI-->
+       <script type="text/javascript" src="../js/UI/jquery-ui-1.9.1.custom.min.js"></script>
+       <script type="text/javascript" src="../js/script.js"></script>
     </div> <!--end container -->
-    <script type="text/javascript" src="../js/jquery.js"></script>
-    <!-- jQuery plugins -->
-    <script type="text/javascript" src="../js/plugins/tweets/jquery.tweet.js"></script>
-    <!-- Google plugins -->
-    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-    <!-- jQuery UI-->
-    <script type="text/javascript" src="../js/UI/jquery-ui-1.9.1.custom.min.js"></script>
-    <script type="text/javascript" src="../js/script.js"></script>
 </body>
 </html>

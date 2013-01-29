@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Trunking.io On-Boarding</title>
+    <link rel="stylesheet" href="css/onboarding_style.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'> 
+    <!-- <link rel="icon" href="images/T_Favicon.ico"/> -->
+</head>
+
+<!-- SITE BUILD VERSION 2 -->
+
+    <body>
+    	<div class="container">
+        	<header>
+            	<div class="row">
+                    <div class="logo">
+                    	<a href="index.html">
+                    		<img src="img/Logo.png" alt="TRUNKING.io">
+                   		</a>
+                    </div>
+                    <nav id="nav" class="nav-holder">
+    					<ul id="nav" class="menu">
+    		                <li><a href="#">Log-in</a></li>
+    					</ul>
+
+    				</nav>
+                </div>
+        	</header>
+
+            <!-- ************ BLUE BAR NAV *********** -->
+
+            <div class="wizard">    
+                <div class="wizard-top-bar blue-gradient" data-max_step="3">
+                    <div class="steps-wrapper">
+                        <div class="step active" data-step="1">
+                            <div class="wrapper-icon">
+                                <div id="account-icon"></div>
+                            </div>
+                            <div class="step-title">
+                                Account
+                            </div>
+                        </div>
+                        
+                        <div class="step" data-step="2">
+                            <div class="wrapper-icon">
+                                <div id="billing-icon"></div>
+                            </div>
+                            <div class="step-title">
+                                Billing
+                            </div>
+                        </div>
+                        
+                        <div class="step" data-step="3">
+                            <div class="wrapper-icon">
+                                <div id="confirmation-icon"></div>
+                            </div>
+                            <div class="step-title">
+                                Confirmation
+                            </div>
+                        </div>
+                    </div> <!-- END steps-wrapper -->
+                </div> <!-- END wizard-top-bar blue-gradient -->
+            </div> <!-- END wizard -->
+
+            <!-- ************ MAIN CONTENT *********** -->
+            <div class="onboarding-content-wrapper">
+                 
+                <!-- ************ SETUP ACCOUNT STEP 1 *********** -->
+                <div id="setup-account-wrapper" style="display:none;">
+                    <h2 class="onboarding-title">Let's set up your account.</h2>
+                    
+                    <div id="account-details">
+                        <fieldset class="onboarding-form">
+                            
+                            <div class="line-wrap">    
+                                <div class="label-wrap">  
+                                    <label>
+                                        User Name
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <input type="text" name="acct-user-name" id="acct-user-name" placeholder="Username">
+                            </div>
+
+                            <div class="line-wrap">
+                                <div class="label-wrap">     
+                                    <label>
+                                        Account Name
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <input type="text" name="acct-name" id="acct-name" placeholder="Company Name">
+                            </div>
+
+                            <div class="line-wrap">
+                                <div class="label-wrap">     
+                                    <label>
+                                        Email Address
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <input type="text" name="acct-email" id="acct-email" placeholder="john@johndoe.com">
+                            </div>
+
+                            <div class="line-wrap">
+                                <div class="label-wrap">     
+                                    <label>
+                                        Password
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <input type="password" name="acct-password" id="acct-password" placeholder="Min. 8 characters">
+                            </div>
+                        </fieldset>
+                    </div> <!-- end ACCOUNT-DETAILS -->
+                </div> <!-- end SETUP-ACCOUNT -->
+
+                <!-- ************ SETUP BILLING STEP 2 *********** -->
+                <div id="setup-billing-wrapper" style="display:none;">
+                    <h2 class="onboarding-title">Let's set up your billing info.</h2>
+                    
+                    <div id="billing-details">
+                        <fieldset class="onboarding-form">
+                            
+                            <div class="line-wrap">
+                                <div class="label-wrap">  
+                                    <label>
+                                        Card Number
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <input type="text" name="billing-cardnumber" id="billing-cardnumber">
+                                <div id="cardtype-image"></div>
+                            </div>
+
+                            <div class="line-wrap">    
+                                <div class="label-wrap">     
+                                    <label>
+                                        Name on Card
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <input type="text" name="billing-name" id="billing-name" placeholder="John B Doe">
+                            </div>
+
+                            <div class="line-wrap">
+                                <div class="label-wrap">     
+                                    <label>
+                                        Expiration
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <input type="text" name="billing-expiration" id="billing-expiration" placeholder="mm/yy">
+                            </div>
+
+                            <div class="line-wrap">
+                                <div class="label-wrap">     
+                                    <div id="cvv-info">
+                                        <a class="cvv-more-info">?
+                                            <span>
+                                                <img src="img/cvv_info.jpg">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <label>
+                                        CVV
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <input type="text" name="billing-expiration" id="billing-expiration" placeholder="***">
+                            </div>
+
+                            <div class="horizontal-line"></div>
+
+                            <h4>Billing Address <span>(As it appears on your credit card statement)</span></h4>
+
+                            <div class="line-wrap">
+                                <div class="label-wrap">     
+                                    <label>
+                                        Country
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <select name="braintree.credit_card.billing_address.country" id="billing-country">
+                                    <option value="Other">Other country...</option>
+                                    <option value="AD"> Andorra</option>
+                                    <option value="AR"> Argentina</option>
+                                    <option value="AU"> Australia</option>
+                                    <option value="AT"> Austria</option>
+                                    <option value="BD"> Bangladesh</option>
+                                    <option value="BE"> Belgium</option>
+                                    <option value="BR"> Brazil</option>
+                                    <option value="BG"> Bulgaria</option>
+                                    <option value="CA"> Canada</option>
+                                    <option value="HR"> Croatia</option>
+                                    <option value="CZ"> Czech Republic</option>
+                                    <option value="DK"> Denmark</option>
+                                    <option value="DO"> Dominican Republic</option>
+                                    <option value="FO"> Faroe Islands</option>
+                                    <option value="FI"> Finland</option>
+                                    <option value="FR"> France</option>
+                                    <option value="GF"> French Guiana</option>
+                                    <option value="DE"> Germany</option>
+                                    <option value="GL"> Greenland</option>
+                                    <option value="GP"> Guadeloupe</option>
+                                    <option value="GT"> Guatemala</option>
+                                    <option value="HU"> Hungary</option>
+                                    <option value="IS"> Iceland</option>
+                                    <option value="IN"> India</option>
+                                    <option value="IT"> Italy</option>
+                                    <option value="JP"> Japan</option>
+                                    <option value="LI"> Liechtenstein</option>
+                                    <option value="LT"> Lithuania</option>
+                                    <option value="LU"> Luxembourg</option>
+                                    <option value="MK"> Macedonia</option>
+                                    <option value="MY"> Malaysia</option>
+                                    <option value="MQ"> Martinique</option>
+                                    <option value="YT"> Mayotte</option>
+                                    <option value="MX"> Mexico</option>
+                                    <option value="MD"> Moldova</option>
+                                    <option value="MC"> Monaco</option>
+                                    <option value="NL"> Netherlands</option>
+                                    <option value="NZ"> New Zealand</option>
+                                    <option value="NO"> Norway</option>
+                                    <option value="PK"> Pakistan</option>
+                                    <option value="PH"> Philippines</option>
+                                    <option value="PL"> Poland</option>
+                                    <option value="PT"> Portugal</option>
+                                    <option value="RU"> Russia</option>
+                                    <option value="RE"> RÃ©ion</option>
+                                    <option value="SM"> San Marino</option>
+                                    <option value="SK"> Slovakia</option>
+                                    <option value="SI"> Slovenia</option>
+                                    <option value="ZA"> South Africa</option>
+                                    <option value="ES"> Spain</option>
+                                    <option value="LK"> Sri Lanka</option>
+                                    <option value="SE"> Sweden</option>
+                                    <option value="CH"> Switzerland</option>
+                                    <option value="TH"> Thailand</option>
+                                    <option value="TR"> Turkey</option>
+                                    <option value="GB"> United Kingdom</option>
+                                    <option value="US" selected="selected"> United States</option>
+                                    <option value="VA"> Vatican City</option>
+                                    <option value="WF"> Wallis and Futuna</option>
+                                </select>
+                            </div>
+
+                            <div class="line-wrap">
+                                <div class="label-wrap">     
+                                    <label>
+                                        Zipcode
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <input type="text" name="billing-zipcode" id="billing-zipcode" placeholder="00000">
+                            </div>
+
+                            <div class="line-wrap">
+                                <div class="label-wrap">     
+                                    <label>
+                                        Address Line 1
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <input type="text" name="billing-address1" id="billing-address1">
+                            </div>
+
+                            <div class="line-wrap">
+                                <div class="label-wrap">     
+                                    <label>
+                                        Address Line 2
+                                    </label>
+                                </div>
+                                <input type="text" name="billing-address2" id="billing-address2">
+                            </div>
+
+                            <div class="line-wrap">
+                                <div class="label-wrap">     
+                                    <label>
+                                        State
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <input type="text" name="billing-state" id="billing-state">
+                            </div>
+
+                            <div class="line-wrap">
+                                <div class="label-wrap">     
+                                    <label>
+                                        City
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <input type="text" name="billing-city" id="billing-city">
+                            </div>
+                        </fieldset>
+                    </div> <!-- end BILLING-DETAILS -->
+                </div> <!-- end SETUP-BILLING -->
+
+                <!-- ************ SETUP CONFIRMATION STEP 3 *********** -->
+                <div id="setup-confirmation-wrapper">
+                    <h2 class="onboarding-title">You're almost finished! Please review your details below.</h2>
+
+                    <div id="confirmation-details">
+                        <div id="info-review-wrapper">
+                            <div id="info-review-top">   
+                                <h3 class="review-title">Account Information <a href="#">[edit]</a></h3>
+                                <ul class="review-list">
+                                    <li>Username: <span>JohnDoe</span></li>
+                                    <li>Account Name: <span>2600hz</span></li>
+                                    <li>Email: <span>JohnDoe@2600hz.com</span></li>
+                                </ul>
+                            </div>
+
+                            <div id="info-review-bottom">
+                                <h3 class="review-title">Billing Information <a href="#">[edit]</a></h3>
+
+                                <ul class="review-list">
+                                    <li>Card: <span id="cardtype">Mastercard</span> ************<span id="last4digits">1234</span></li>
+                                    <li>Name: <span>John Doe</span></li>
+                                    <li>Address: <span id="street">116 Natoma St.</span> <br> <span id="city_state_zip">San Francisco, CA 94105</span></li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+
+                        <div id="order-review-wrapper">
+                            <h3 class="review-title">Review and confirm your order <a href="#">[edit]</a></h3>
+
+                            <div id="order-review">
+                                <div id="totalcost-title">
+                                    Total Cost
+                                </div>
+
+                                <div id="totalcost-number" data-price="29.99">
+                                    $29.99
+                                </div>
+
+                                <div id="ordersummary-title">
+                                    Order Summary
+                                </div>
+
+                                <ul id="ordersummary-list">
+                                    <li><strong id="amount_twoway_trunks">1</strong> Unlimited Two-Way Trunks</li>
+                                    <li><strong id="amount_numbers">0</strong> Inbound DID Numbers</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> <!-- end CONFIRMATION-DETAILS -->
+
+                    <p id="confirmation-paragraph">Review the details above to confirm that your information is correct. You will receive a confirmation email upon account<br> completion. In the next step you will be guided on how to use your Trunking.io servies and connect your first PBX.</p>
+
+                    <button id="confirm-complete">Complete Your Order</button>
+
+                    <p id="confirmation-paragraph">By clicking the 'Complete Your Order' button above, I acknowledge <br> that I understand and agree with the Trunking.io terms and conditions.<br> <a href="#">View Terms and Conditions</a></p>
+
+                </div> <!-- end SETUP-CONFIRMATION-WRAPPER -->
+
+                <div id="progress-wrap" style="display: none;">   <!-- Hide progress-wrap when on step 3 confirmation -->
+                    <div id="go-back">
+                        <a href="#"></a>
+                        <div id="back-arrow">
+                        </div>
+                        <span>Back</span>
+                    </div>
+
+                    <div id="go-next">
+                        <a href="#"></a>
+                        <span>Next</span>
+                        <div id="next-arrow">
+                        </div>
+                    </div>
+                </div> <!-- end PROGRESS-WRAP -->
+
+                <!-- ******** The following '.sidenote' and '#secure-img-wrapper' need to hide (and become visible) with #setup-billing-wrapper *******-->
+                <p class="side-note" style="display:none;">A credit card is only needed for security &amp; verification purposes. This helps us prevent fraud.<br> Your card will not be charged without notifying you when you place an order to our paid services.<br> <a href="#">See Privacy Policy</a></p>
+
+                <div id="secure-img-wrapper" style="display:none;">
+                    <img id="secure-lock" src="img/Secure_icon.png">
+                    <img id="braintree" src="img/Braintree_icon.png">
+                </div>
+            </div> <!-- end onboarding-content-wrapper -->
+
+            <div id="onboarding-footer">
+                <div id="footer-legal-wrap">
+                    <div id="terms-onboarding">
+                        <a href="docs/TermsAndConditions.pdf" target="_blank">Terms and Conditions</a>
+                    </div>
+
+                    <p id="p-onboarding">Powered by <a href="http://2600hz.com" target="_blank">2600hz</a></p>
+                </div> <!-- end footer-legal-wrap -->
+            </div>
+            
+        </div> <!-- end CONTAINER -->
+    
+    </body> <!-- end BODY -->
+</html> <!-- end BODY -->

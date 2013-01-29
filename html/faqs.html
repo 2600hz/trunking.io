@@ -1,11 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>TRUNKING.io FAQs</title>
-<link rel="stylesheet" href="../css/style.css"/>
-<link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
-<!-- <link rel="icon" href="images/T_Favicon.ico"/> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>TRUNKING.io FAQs</title>
+    <link rel="stylesheet" href="../js/plugins/tweets/jquery.tweet.css"/>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+    <!-- <link rel="icon" href="images/T_Favicon.ico"/> -->
 </head>
 
 <body>
@@ -53,7 +54,7 @@
 
                     <!-- START TOPIC WRAPPERS -->
 
-                    <div id="topic1-wrapper" class="topic-wrapper" data-id="1" style="display: none;">
+                    <div id="topic1-wrapper" class="topic-wrapper" data-id="1">
 
                         <div id="topic1-window">
                              <h2 class="window-title" id="topic1-window-title">I am New to SIP Trunking</h2>
@@ -538,7 +539,7 @@
 
                     <!-- START topic5-wrapper -->
 
-                    <div id="topic5-wrapper" class="topic-wrapper" data-id="5">
+                    <div id="topic5-wrapper" class="topic-wrapper" data-id="5" style="display: none;">
 
                         <div id="topic5-window">
                             <h2 class="window-title" id="topic5-window-title">Account &amp; Billing</h2>
@@ -703,11 +704,11 @@
 
             <div id="footer-secondary-wrap">
 
-                <div id="connect-section">
+                <div id="connect-section" class="link-section">
                     <h2 id="signup">Sign up for Newsletter</h2>
                     <img src="../images/newsletter.png"/>
 
-                    <div id="subscribe-wrapper" style="display: none;">
+                    <div id="subscribe-wrapper" class="content-section">
                         <div id="subscribe">
                             <form  action="http://2600hz.us2.list-manage1.com/subscribe/post?u=e8893b1d746d0484058a81e83&amp;id=6c9cdbe006" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
 
@@ -724,19 +725,19 @@
 
                 </div><!-- end connect-section -->
 
-                <div id="tweets-section">
+                <div id="tweets-section" class="link-section">
                     <h2 id="read-tweets">Read our recent tweets</h2>
-                    <img src="../images/ReadTweets.png"/>
+                    <img id="tweeticon" src="../images/ReadTweets.png"/>
 
-                    <div id="tweets-wrapper">
+                    <div id="tweets-wrapper" class="content-section">
                     </div>
                 </div>
 
-                <div id="blog-section">
+                <div id="blog-section" class="link-section">
                     <h2 id="read-blog">Read our recent blog posts</h2>
                     <img src="../images/FollowBlog.png"/>
 
-                    <div id="blog-wrapper">
+                    <div id="blog-wrapper" class="content-section">
                     </div>
                 </div>
 
@@ -744,7 +745,7 @@
 
             <div id="footer-legal-wrap">
                 <div id="terms">
-                    <a href="#">Terms of Use</a>
+                    <a href="../docs/TermsAndConditions.pdf" target="_blank">Terms and Conditions</a>
                 </div>
 
                 <p>Powered by <a href="http://2600hz.com" target="_blank">2600hz</a></p>
