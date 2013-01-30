@@ -424,6 +424,15 @@ h2.onboarding-title {
 	line-height: 21px;
 	}
 
+.side-note a {
+	text-decoration: none;
+	color: #ff3333;
+	}
+
+.side-note a:hover {
+	text-decoration: underline;
+	}
+
 #secure-img-wrapper {
 	text-align: center;
 	margin-bottom: 30px;
@@ -665,6 +674,12 @@ button#confirm-complete:active {
 	float: left;
 	}
 
+#go-back:hover #back-arrow {
+	border-right: 36px solid #2dbcff;
+	border-top: 22px solid transparent;
+	border-bottom: 22px solid transparent;
+	}
+
 #go-next {
 	width: 100px;
 	height: 52px;
@@ -696,22 +711,19 @@ button#confirm-complete:active {
 	float: right;
 	}
 
-#next-arrow:hover {
-	height: 0;
-	width: 0;
-	border-left: 36px solid #2dbcff;
-	border-top: 22px solid transparent;
-	border-bottom: 22px solid transparent;
-	
-	float: right;
-	}
-
 #go-next span {
 	float: left;
 	margin-top: 11px;
 	font-size: 18px;
 	margin-left: 12px;
 	}
+
+#go-next:hover #next-arrow {
+	border-left: 36px solid #2dbcff;
+	border-top: 22px solid transparent;
+	border-bottom: 22px solid transparent;
+	} 
+
 
 /***************/
 

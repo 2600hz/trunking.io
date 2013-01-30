@@ -15,7 +15,7 @@
         	<header>
             	<div class="row">
                     <div class="logo">
-                    	<a href="index.html">
+                    	<a href="../../index.html">
                     		<img src="img/Logo.png" alt="TRUNKING.io">
                    		</a>
                     </div>
@@ -117,7 +117,7 @@
                 </div> <!-- end SETUP-ACCOUNT -->
 
                 <!-- ************ SETUP BILLING STEP 2 *********** -->
-                <div id="setup-billing-wrapper" style="display:none;">
+                <div id="setup-billing-wrapper" style="display: none;">
                     <h2 class="onboarding-title">Let's set up your billing info.</h2>
                     
                     <div id="billing-details">
@@ -353,7 +353,7 @@
 
                     <button id="confirm-complete">Complete Your Order</button>
 
-                    <p id="confirmation-paragraph">By clicking the 'Complete Your Order' button above, I acknowledge <br> that I understand and agree with the Trunking.io terms and conditions.<br> <a href="#">View Terms and Conditions</a></p>
+                    <p id="confirmation-paragraph">By clicking the 'Complete Your Order' button above, I acknowledge <br> that I understand and agree with the Trunking.io terms and conditions.<br> <a href="../../docs/TermsAndConditions.pdf" target="_blank">View Terms and Conditions</a></p>
 
                 </div> <!-- end SETUP-CONFIRMATION-WRAPPER -->
 
@@ -373,19 +373,23 @@
                     </div>
                 </div> <!-- end PROGRESS-WRAP -->
 
-                <!-- ******** The following '.sidenote' and '#secure-img-wrapper' need to hide (and become visible) with #setup-billing-wrapper *******-->
-                <p class="side-note" style="display:none;">A credit card is only needed for security &amp; verification purposes. This helps us prevent fraud.<br> Your card will not be charged without notifying you when you place an order to our paid services.<br> <a href="#">See Privacy Policy</a></p>
+                <!-- **********************************************************************************************************************************-->
+                <!-- ***********   The following #setup-billing-wrapper-pt2 needs to hide (and become visible) with #setup-billing-wrapper   **********-->
+                <div id="setup-billing-wrapper-pt2" style="display: none;">   
+                    <p class="side-note">A credit card is only needed for security &amp; verification purposes. This helps us prevent fraud.<br> Your card will not be charged without notifying you when you place an order to our paid services.<br> <a href="http://2600hz.com/privacy.html" target="_blank">See Privacy Policy</a></p>
 
-                <div id="secure-img-wrapper" style="display:none;">
-                    <img id="secure-lock" src="img/Secure_icon.png">
-                    <img id="braintree" src="img/Braintree_icon.png">
-                </div>
+                    <div id="secure-img-wrapper">
+                        <img id="secure-lock" src="img/Secure_icon.png">
+                        <img id="braintree" src="img/Braintree_icon.png">
+                    </div>
+                </div> 
+                <!-- **********************************************************************************************************************************-->
             </div> <!-- end onboarding-content-wrapper -->
 
             <div id="onboarding-footer">
                 <div id="footer-legal-wrap">
                     <div id="terms-onboarding">
-                        <a href="docs/TermsAndConditions.pdf" target="_blank">Terms and Conditions</a>
+                        <a href="../../docs/TermsAndConditions.pdf" target="_blank">Terms and Conditions</a>
                     </div>
 
                     <p id="p-onboarding">Powered by <a href="http://2600hz.com" target="_blank">2600hz</a></p>
