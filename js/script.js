@@ -1,31 +1,255 @@
 // JavaScript Document
 var THIS = this;
 
-/* Twitter plugin */
-$('#tweets-wrapper').tweet({
-    username: "2600hertz",
-    join_text: "auto",
-    avatar_size: 40,
-    count: 2,
-    auto_join_text_default: "",
-    auto_join_text_ed: "",
-    auto_join_text_ing: "",
-    auto_join_text_reply: "",
-    auto_join_text_url: "",
-    loading_text: "loading tweets..."
-});
+/* Wizard */
+if($('#onboarding_wrapper').size() > 0) {
+    window.alert = function(message) {
+        $('#override_javascript_alert').text(message).dialog({
+            modal:true,
+            title:'Validation Error',
+            resizable: false,
+            buttons: {
+                'OK':function(){
+                    $(this).dialog('close');
+                }
+            }
+        });
+    };
 
-/* Tumblr plugin */
-google.load("feeds", "1");
+    var initialize_wizard = function(parent, callback_submit) {
+        var THIS = this,
+            max_step = parseInt($('.wizard-top-bar', parent).attr('data-max_step'));
 
-function OnLoad() {
-    var feedControl = new google.feeds.FeedControl();
-    feedControl.setNumEntries(1);
-    feedControl.addFeed("http://blog.2600hz.com/rss");
-    feedControl.draw(document.getElementById("blog-wrapper"));
+        $('.wizard-content-step', parent).hide();
+        $('.wizard-content-step[data-step="1"]', parent).show();
+
+        $('.wizard-top-bar', parent).attr('data-active_step', '1');
+
+        if(max_step !== 1) {
+            $('.submit-btn', parent).hide();
+        }
+        else {
+            $('.next-step', parent).hide();
+        }
+
+        $('.prev-step', parent).hide();
+
+        $('.step', parent).on('click', function() {
+            var step = $(this).data('step');
+            if($(this).hasClass('completed')) {
+                var active_step = parseInt($('.wizard-top-bar', parent).attr('data-active_step'));
+
+                if(active_step > step) {
+                    THIS.change_step(step, max_step, parent);
+                }
+                else {
+                    THIS.validate_step($('.wizard-top-bar', parent).attr('data-active_step'), parent, function() {
+                        THIS.change_step(step, max_step, parent);
+                    });
+                }
+            }
+        });
+
+        $('.next-step', parent).on('click', function(ev) {
+            ev.preventDefault();
+            var go_summary = $(this).hasClass('summary');
+
+            current_step = parseInt($('.wizard-top-bar', parent).attr('data-active_step'));
+            THIS.validate_step(current_step, parent, function() {
+                if(go_summary) {
+                    THIS.change_step(max_step, max_step, parent);
+                }
+                else {
+                    THIS.change_step(++current_step, max_step, parent);
+                }
+            });
+            $(this).removeClass('summary');
+        });
+
+        $('.prev-step', parent).on('click', function(ev) {
+            ev.preventDefault();
+
+            current_step = parseInt($('.wizard-top-bar', parent).attr('data-active_step'));
+            THIS.change_step(--current_step, max_step, parent);
+        });
+
+        $('.submit-btn', parent).on('click', function(ev) {
+            ev.preventDefault();
+
+            if(typeof callback_submit === 'function') {
+                callback_submit();
+            }
+        });
+    };
+
+    var change_step = function(step_index, max_step, parent) {
+        var THIS = this;
+
+        $('.step', parent).removeClass('active');
+        $('.step[data-step="'+step_index+'"]', parent).addClass('active');
+
+        for(var i = step_index; i >= 1; --i) {
+            $('.step[data-step="'+i+'"]', parent).addClass('completed');
+        }
+
+        $('.wizard-content-step', parent).hide();
+        $('.wizard-content-step[data-step="'+ step_index +'"]', parent).show();
+
+        $('.cancel', parent).hide();
+        $('.prev-step', parent).show();
+        $('.next-step', parent).show();
+        $('.submit-btn', parent).hide();
+
+        if(step_index === max_step) {
+            $('.next-step', parent).hide();
+            $('.submit-btn', parent).show();
+        }
+
+        if(step_index === 1) {
+            $('.prev-step', parent).hide();
+            $('.cancel', parent).show();
+        }
+
+        $('.wizard-top-bar', parent).attr('data-active_step', step_index);
+    };
+
+    var validate_step = function(step, parent, callback) {
+        var validated = true,
+            validation_form_error = false,
+            step = parseInt(step),
+            error_message = 'Please correct the following errors:';
+
+        if(step === 1) {
+            $('#recap_username').html($('#acct-username').val());
+            $('#recap_account_name').html($('#acct-name').val());
+            $('#recap_email').html($('#acct-email').val());
+        }
+        else if(step === 2) {
+            $('#cardtype').html();
+            var card_nbr = $('#billing-cardnumber').val();
+            $('#last4digits').html(card_nbr.substr(card_nbr.length - 4));
+            $('#full_name').html($('#billing-name').val());
+            $('#street').html($('#billing-address1').val() + ' - ' + $('#billing-address2').val());
+            $('#city_state_zip').html($('#billing-city').val() + ', ' + $('#billing-state').val() + ' ' + $('#billing-zipcode').val());
+        }
+        else if(step === 3) {
+        }
+
+        $('input', '.wizard-content-step[data-step="'+ step +'"]').each(function(k, v) {
+            if(v.validity.valid === false) {
+                validated = false;
+                validation_form_error = true;
+            }
+        });
+        if(validation_form_error) {
+            validated = false;
+            error_message += '\n\nPlease check that you filled the input properly.';
+        }
+
+        if(validated === true) {
+            if(typeof callback === 'function') {
+                callback();
+            }
+        }
+        else {
+            alert(error_message);
+        }
+    };
+
+    $('.link-step').on('click', function() {
+        THIS.change_step($(this).data('step'), 3, $('#onboarding_wrapper'));
+        $('.next-step').addClass('summary');
+    });
+
+    $('#billing-cardnumber').on('blur', function(){
+        var re = new RegExp("^4"),
+            number = $(this).val(),
+            card_type = '';
+
+        if (number.match(re) != null) {
+            $('#cardtype-image').removeClass('discover mastercard amex')
+                                .addClass('visa');
+            card_type = 'Visa';
+        }
+        else {
+            re = new RegExp("^(34|37)");
+            if (number.match(re) != null){
+                $('#cardtype-image').removeClass('discover mastercard visa')
+                                    .addClass('amex');
+                card_type = 'American Express';
+            }
+            else {
+                re = new RegExp("^5[1-5]");
+                if (number.match(re) != null){
+                    $('#cardtype-image').removeClass('discover visa amex')
+                                        .addClass('mastercard');
+                    card_type = 'Mastercard';
+                }
+                else {
+                    $('#cardtype-image').removeClass('discover visa amex mastercard')
+                }
+            }
+        }
+
+        $('#cardtype').html(card_type);
+    });
+
+    $('#billing-zipcode').blur(function() {
+        $.getJSON('http://www.geonames.org/postalCodeLookupJSON?&country=US&callback=?', { postalcode: $(this).val() }, function(response) {
+            if (response && response.postalcodes.length && response.postalcodes[0].placeName) {
+                $('#billing-city').val(response.postalcodes[0].placeName);
+                $('#billing-state').val(response.postalcodes[0].adminCode1);
+            }
+        });
+    });
+
+    THIS.initialize_wizard($('#onboarding_wrapper'));
 }
 
-google.setOnLoadCallback(OnLoad)
+if($('#testimonial-section').size() > 0) {
+    var i = 0;
+
+    var function_rotate = function() {
+        $('.testimonial').hide();
+        $('#testimonial-' + (((i) % 4) + 1)).slideDown();
+        $('#testimonial-' + (((i + 1) % 4) + 1)).slideDown();
+        i = i+2;
+    };
+
+    setInterval(function(){
+        function_rotate();
+    }, 10000);
+    function_rotate();
+}
+
+/* Twitter plugin */
+if($('#tweets-wrapper').size() > 0) {
+    $('#tweets-wrapper').tweet({
+        username: "2600hertz",
+        join_text: "auto",
+        avatar_size: 40,
+        count: 2,
+        auto_join_text_default: "",
+        auto_join_text_ed: "",
+        auto_join_text_ing: "",
+        auto_join_text_reply: "",
+        auto_join_text_url: "",
+        loading_text: "loading tweets..."
+    });
+}
+/* Tumblr plugin */
+if(typeof google !== 'undefined') {
+    google.load("feeds", "1");
+
+    function OnLoad() {
+        var feedControl = new google.feeds.FeedControl();
+        feedControl.setNumEntries(1);
+        feedControl.addFeed("http://blog.2600hz.com/rss");
+        feedControl.draw(document.getElementById("blog-wrapper"));
+    }
+
+    google.setOnLoadCallback(OnLoad);
+}
 
 /* Beginning of our JS */
 var update_data_trunks = function(trunks_amount) {

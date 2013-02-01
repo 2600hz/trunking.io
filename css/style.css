@@ -724,6 +724,7 @@ header {
 #testimonial-section {
 	height: 385px;
 	background-color: #eeeeee;
+    text-align: center;
 	}
 
 #testimonial-section .shadow-top {
@@ -746,52 +747,22 @@ header {
 	}
 
 #testimonial-wrap {
-	max-width: 940px;
-	margin: auto;
 	height: 220px;
+    text-align: left;
+    display: inline-block;
 	}
 
-#testimonial-left {
-	height: 200px;
-	width: 400px;
-	float: left;
-	margin-left: 65px;
-	}
-
-#testimonial-right {
-	height: 200px;
-	width: 400px;
-	float: right;
-	margin-right: 27px;
-	}
-
-#testimonial-1 {
-	height: 200px;
+#testimonial-wrap .testimonial {
+    float: left;
+    height: 200px;
 	width: 400px;
 	background: url("../images/TestimonialBubble.png");
 	background-repeat: no-repeat;
-	}
+}
 
-#testimonial-2 {
-	height: 200px;
-	width: 400px;
-	background: url("../images/TestimonialBubble.png");
-	background-repeat: no-repeat;
-	}
-
-#testimonial-3 {
-	height: 200px;
-	width: 400px;
-	background: url("../images/TestimonialBubble.png");
-	background-repeat: no-repeat;
-	}
-
-#testimonial-4 {
-	height: 200px;
-	width: 400px;
-	background: url("../images/TestimonialBubble.png");
-	background-repeat: no-repeat;
-	}
+#testimonial-wrap .testimonial.visible) {
+    margin-left: 50px;
+}
 
 .quotemark {
 	margin-left: 15px;

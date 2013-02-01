@@ -105,7 +105,7 @@ header {
 
 .wizard {
 	font-family: 'Maven Pro', sans-serif;
-	}  
+	}
 
 .wizard .wizard-top-bar {
     border-bottom: 8px solid #333;
@@ -164,7 +164,7 @@ header {
 	}
 
 #account-icon {
-	background: url("../img/AccountIcon_blue.png");
+	background: url("../img/AccountIcon.png");
 	width: 48px;
 	height: 40px;
 	background-repeat: no-repeat;
@@ -189,6 +189,21 @@ header {
 	margin-top: 4px;
 	margin-left: 2px;
 	}
+
+.completed #account-icon, .active #account-icon {
+	background: url("../img/AccountIcon_blue.png");
+	background-repeat: no-repeat;
+    }
+
+.completed #billing-icon, .active #billing-icon {
+	background: url("../img/BillingIcon_blue.png");
+	background-repeat: no-repeat;
+    }
+.completed #confirmation-icon, .active #confirmation-icon {
+	background: url("../img/CheckIcon_blue.png");
+	background-repeat: no-repeat;
+    }
+
 
 /*************************************/
 /* Start ONBOARDING CONTENT SECTION */
@@ -272,11 +287,25 @@ h2.onboarding-title {
 	height: 28px;
 	width: 45px;
 	display: inline-block;
-	background-image: url("../img/Mastercard.png");
 	background-repeat: no-repeat;
 	margin-bottom: -9px;
 	margin-left: 5px;
 	}
+
+#cardtype-image.amex {
+	background-image: url("../img/Amex.png");
+    }
+#cardtype-image.mastercard {
+	background-image: url("../img/Mastercard.png");
+    }
+#cardtype-image.visa {
+	background-image: url("../img/Visa.png");
+    }
+#cardtype-image.discover {
+	background-image: url("../img/Discover.png");
+    }
+
+
 
 /**** CVV INFO POPUP ****/
 
@@ -289,7 +318,7 @@ h2.onboarding-title {
 	}
 
 .cvv-more-info {
-	background: #bbbbbb; 
+	background: #bbbbbb;
 	-moz-border-radius:42px;
 	-webkit-border-radius:42px;
 	border-radius:42px;
@@ -670,7 +699,7 @@ button#confirm-complete:active {
 	border-right: 36px solid #dddddd;
 	border-top: 22px solid transparent;
 	border-bottom: 22px solid transparent;
-	
+
 	float: left;
 	}
 
@@ -707,7 +736,7 @@ button#confirm-complete:active {
 	border-left: 36px solid #dddddd;
 	border-top: 22px solid transparent;
 	border-bottom: 22px solid transparent;
-	
+
 	float: right;
 	}
 
@@ -722,7 +751,7 @@ button#confirm-complete:active {
 	border-left: 36px solid #2dbcff;
 	border-top: 22px solid transparent;
 	border-bottom: 22px solid transparent;
-	} 
+	}
 
 
 /***************/

@@ -4,14 +4,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Trunking.io On-Boarding</title>
     <link rel="stylesheet" href="css/onboarding_style.css"/>
-    <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'> 
+    <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+    <link type="text/css" href="../../js/UI/ui-lightness/jquery-ui-1.8.8.custom.css" rel="Stylesheet" />
     <!-- <link rel="icon" href="images/T_Favicon.ico"/> -->
 </head>
 
 <!-- SITE BUILD VERSION 2 -->
 
     <body>
-    	<div class="container">
+    	<div id="onboarding_wrapper" class="container">
         	<header>
             	<div class="row">
                     <div class="logo">
@@ -30,7 +31,7 @@
 
             <!-- ************ BLUE BAR NAV *********** -->
 
-            <div class="wizard">    
+            <div class="wizard">
                 <div class="wizard-top-bar blue-gradient" data-max_step="3">
                     <div class="steps-wrapper">
                         <div class="step active" data-step="1">
@@ -41,7 +42,7 @@
                                 Account
                             </div>
                         </div>
-                        
+
                         <div class="step" data-step="2">
                             <div class="wrapper-icon">
                                 <div id="billing-icon"></div>
@@ -50,7 +51,7 @@
                                 Billing
                             </div>
                         </div>
-                        
+
                         <div class="step" data-step="3">
                             <div class="wrapper-icon">
                                 <div id="confirmation-icon"></div>
@@ -65,97 +66,97 @@
 
             <!-- ************ MAIN CONTENT *********** -->
             <div class="onboarding-content-wrapper">
-                 
+
                 <!-- ************ SETUP ACCOUNT STEP 1 *********** -->
-                <div id="setup-account-wrapper"  style="display:none;">
+                <div id="setup-account-wrapper" class="wizard-content-step" data-step="1">
                     <h2 class="onboarding-title">Let's set up your account.</h2>
-                    
+
                     <div id="account-details">
                         <fieldset class="onboarding-form">
-                            
-                            <div class="line-wrap">    
-                                <div class="label-wrap">  
+
+                            <div class="line-wrap">
+                                <div class="label-wrap">
                                     <label>
                                         User Name
                                         <span class="required">*</span>
                                     </label>
                                 </div>
-                                <input type="text" name="acct-user-name" id="acct-user-name" placeholder="Username">
+                                <input type="text" required name="acct-user-name" id="acct-username" placeholder="Username">
                             </div>
 
                             <div class="line-wrap">
-                                <div class="label-wrap">     
+                                <div class="label-wrap">
                                     <label>
                                         Account Name
                                         <span class="required">*</span>
                                     </label>
                                 </div>
-                                <input type="text" name="acct-name" id="acct-name" placeholder="Company Name">
+                                <input type="text" required name="acct-name" id="acct-name" placeholder="Company Name">
                             </div>
 
                             <div class="line-wrap">
-                                <div class="label-wrap">     
+                                <div class="label-wrap">
                                     <label>
                                         Email Address
                                         <span class="required">*</span>
                                     </label>
                                 </div>
-                                <input type="text" name="acct-email" id="acct-email" placeholder="john@johndoe.com">
+                                <input type="email" required name="acct-email" id="acct-email" placeholder="john@johndoe.com">
                             </div>
 
                             <div class="line-wrap">
-                                <div class="label-wrap">     
+                                <div class="label-wrap">
                                     <label>
                                         Password
                                         <span class="required">*</span>
                                     </label>
                                 </div>
-                                <input type="password" name="acct-password" id="acct-password" placeholder="Min. 8 characters">
+                                <input required type="password" name="acct-password" id="acct-password" placeholder="Min. 8 characters" pattern=".{8,}" title="Min. 8 characters">
                             </div>
                         </fieldset>
                     </div> <!-- end ACCOUNT-DETAILS -->
                 </div> <!-- end SETUP-ACCOUNT -->
 
                 <!-- ************ SETUP BILLING STEP 2 *********** -->
-                <div id="setup-billing-wrapper" style="display:none;">
+                <div id="setup-billing-wrapper" class="wizard-content-step" data-step="2">
                     <h2 class="onboarding-title">Let's set up your billing info.</h2>
-                    
+
                     <div id="billing-details">
                         <fieldset class="onboarding-form">
-                            
+
                             <div class="line-wrap">
-                                <div class="label-wrap">  
+                                <div class="label-wrap">
                                     <label>
                                         Card Number
                                         <span class="required">*</span>
                                     </label>
                                 </div>
-                                <input type="text" name="billing-cardnumber" id="billing-cardnumber">
+                                <input type="text" required name="billing-cardnumber" id="billing-cardnumber">
                                 <div id="cardtype-image"></div>
                             </div>
 
-                            <div class="line-wrap">    
-                                <div class="label-wrap">     
+                            <div class="line-wrap">
+                                <div class="label-wrap">
                                     <label>
                                         Name on Card
                                         <span class="required">*</span>
                                     </label>
                                 </div>
-                                <input type="text" name="billing-name" id="billing-name" placeholder="John B Doe">
+                                <input type="text" required name="billing-name" id="billing-name" placeholder="John B Doe">
                             </div>
 
                             <div class="line-wrap">
-                                <div class="label-wrap">     
+                                <div class="label-wrap">
                                     <label>
                                         Expiration
                                         <span class="required">*</span>
                                     </label>
                                 </div>
-                                <input type="text" name="billing-expiration" id="billing-expiration" placeholder="mm/yy">
+                                <input type="text" required name="billing-expiration" id="billing-expiration" placeholder="mm/yy">
                             </div>
 
                             <div class="line-wrap">
-                                <div class="label-wrap">     
+                                <div class="label-wrap">
                                     <div id="cvv-info">
                                         <a class="cvv-more-info">?
                                             <span>
@@ -168,7 +169,7 @@
                                         <span class="required">*</span>
                                     </label>
                                 </div>
-                                <input type="text" name="billing-expiration" id="billing-expiration" placeholder="***">
+                                <input type="text" required name="billing-expiration" id="billing-expiration" placeholder="***">
                             </div>
 
                             <div class="horizontal-line"></div>
@@ -176,7 +177,7 @@
                             <h4>Billing Address <span>(As it appears on your credit card statement)</span></h4>
 
                             <div class="line-wrap">
-                                <div class="label-wrap">     
+                                <div class="label-wrap">
                                     <label>
                                         Country
                                         <span class="required">*</span>
@@ -247,27 +248,27 @@
                             </div>
 
                             <div class="line-wrap">
-                                <div class="label-wrap">     
+                                <div class="label-wrap">
                                     <label>
                                         Zipcode
                                         <span class="required">*</span>
                                     </label>
                                 </div>
-                                <input type="text" name="billing-zipcode" id="billing-zipcode" placeholder="00000">
+                                <input type="text" required name="billing-zipcode" id="billing-zipcode" placeholder="00000">
                             </div>
 
                             <div class="line-wrap">
-                                <div class="label-wrap">     
+                                <div class="label-wrap">
                                     <label>
                                         Address Line 1
                                         <span class="required">*</span>
                                     </label>
                                 </div>
-                                <input type="text" name="billing-address1" id="billing-address1">
+                                <input type="text" required name="billing-address1" id="billing-address1">
                             </div>
 
                             <div class="line-wrap">
-                                <div class="label-wrap">     
+                                <div class="label-wrap">
                                     <label>
                                         Address Line 2
                                     </label>
@@ -276,52 +277,52 @@
                             </div>
 
                             <div class="line-wrap">
-                                <div class="label-wrap">     
+                                <div class="label-wrap">
                                     <label>
                                         State
                                         <span class="required">*</span>
                                     </label>
                                 </div>
-                                <input type="text" name="billing-state" id="billing-state">
+                                <input type="text" required name="billing-state" id="billing-state">
                             </div>
 
                             <div class="line-wrap">
-                                <div class="label-wrap">     
+                                <div class="label-wrap">
                                     <label>
                                         City
                                         <span class="required">*</span>
                                     </label>
                                 </div>
-                                <input type="text" name="billing-city" id="billing-city">
+                                <input type="text" required name="billing-city" id="billing-city">
                             </div>
                         </fieldset>
                     </div> <!-- end BILLING-DETAILS -->
                 </div> <!-- end SETUP-BILLING -->
 
                 <!-- ************ SETUP CONFIRMATION STEP 3 *********** -->
-                <div id="setup-confirmation-wrapper" >
+                <div id="setup-confirmation-wrapper" class="wizard-content-step" data-step="3">
                     <h2 class="onboarding-title">You're almost finished! Please review your details below.</h2>
 
                     <div id="confirmation-details">
                         <div id="info-review-wrapper">
-                            <div id="info-review-top">   
-                                <h3 class="review-title">Account Information <a href="#">[edit]</a></h3>
+                            <div id="info-review-top">
+                                <h3 class="review-title">Account Information <a href="#" class="link-step" data-step="1">[edit]</a></h3>
                                 <ul class="review-list">
-                                    <li>Username: <span>JohnDoe</span></li>
-                                    <li>Account Name: <span>2600hz</span></li>
-                                    <li>Email: <span>JohnDoe@2600hz.com</span></li>
+                                    <li>Username: <span id="recap_username">JohnDoe</span></li>
+                                    <li>Account Name: <span id="recap_account_name">2600hz</span></li>
+                                    <li>Email: <span id="recap_email">JohnDoe@2600hz.com</span></li>
                                 </ul>
                             </div>
 
                             <div id="info-review-bottom">
-                                <h3 class="review-title">Billing Information <a href="#">[edit]</a></h3>
+                                <h3 class="review-title">Billing Information <a href="#" class="link-step" data-step="2">[edit]</a></h3>
 
                                 <ul class="review-list">
                                     <li>Card: <span id="cardtype">Mastercard</span> ************<span id="last4digits">1234</span></li>
-                                    <li>Name: <span>John Doe</span></li>
+                                    <li>Name: <span id="full_name">John Doe</span></li>
                                     <li>Address: <span id="street">116 Natoma St.</span> <br> <span id="city_state_zip">San Francisco, CA 94105</span></li>
                                 </ul>
-                                
+
                             </div>
                         </div>
 
@@ -357,15 +358,15 @@
 
                 </div> <!-- end SETUP-CONFIRMATION-WRAPPER -->
 
-                <div id="progress-wrap" style="display:none;">   <!-- Hide progress-wrap when on step 3 confirmation -->
-                    <div id="go-back">
+                <div id="progress-wrap">   <!-- Hide progress-wrap when on step 3 confirmation -->
+                    <div id="go-back" class="prev-step">
                         <a href="#"></a>
                         <div id="back-arrow">
                         </div>
                         <span>Back</span>
                     </div>
 
-                    <div id="go-next">
+                    <div id="go-next" class="next-step">
                         <a href="#"></a>
                         <span>Next</span>
                         <div id="next-arrow">
@@ -375,14 +376,14 @@
 
                 <!-- **********************************************************************************************************************************-->
                 <!-- ***********   The following #setup-billing-wrapper-pt2 needs to hide (and become visible) with #setup-billing-wrapper   **********-->
-                <div id="setup-billing-wrapper-pt2"  style="display:none;">   
+                <div id="setup-billing-wrapper-pt2" class="wizard-content-step" data-step="2">
                     <p class="side-note">A credit card is only needed for security &amp; verification purposes. This helps us prevent fraud.<br> Your card will not be charged without notifying you when you place an order to our paid services.<br> <a href="http://2600hz.com/privacy.html" target="_blank">See Privacy Policy</a></p>
 
                     <div id="secure-img-wrapper">
                         <img id="secure-lock" src="img/Secure_icon.png">
                         <img id="braintree" src="img/Braintree_icon.png">
                     </div>
-                </div> 
+                </div>
                 <!-- **********************************************************************************************************************************-->
             </div> <!-- end onboarding-content-wrapper -->
 
@@ -395,8 +396,12 @@
                     <p id="p-onboarding">Powered by <a href="http://2600hz.com" target="_blank">2600hz</a></p>
                 </div> <!-- end footer-legal-wrap -->
             </div>
-            
+            <div id="override_javascript_alert"></div>
+            <script type="text/javascript" src="../../js/jquery.js"></script>
+            <script type="text/javascript" src="../../js/UI/jquery-ui-1.9.1.custom.min.js"></script>
+            <!-- jQuery plugins -->
+            <script type="text/javascript" src="../../js/script.js"></script>
         </div> <!-- end CONTAINER -->
-    
+
     </body> <!-- end BODY -->
 </html> <!-- end BODY -->
