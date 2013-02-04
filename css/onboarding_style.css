@@ -164,7 +164,7 @@ header {
 	}
 
 #account-icon {
-	background: url("../img/AccountIcon.png");
+	background: url("../images/onboarding/AccountIcon.png");
 	width: 48px;
 	height: 40px;
 	background-repeat: no-repeat;
@@ -173,7 +173,7 @@ header {
 	}
 
 #billing-icon {
-	background: url("../img/BillingIcon.png");
+	background: url("../images/onboarding/BillingIcon.png");
 	width: 49px;
 	height: 39px;
 	background-repeat: no-repeat;
@@ -182,7 +182,7 @@ header {
 	}
 
 #confirmation-icon {
-	background: url("../img/CheckIcon.png");
+	background: url("../images/onboarding/CheckIcon.png");
 	width: 44px;
 	height: 44px;
 	background-repeat: no-repeat;
@@ -191,16 +191,16 @@ header {
 	}
 
 .completed #account-icon, .active #account-icon {
-	background: url("../img/AccountIcon_blue.png");
+	background: url("../images/onboarding/AccountIcon_blue.png");
 	background-repeat: no-repeat;
     }
 
 .completed #billing-icon, .active #billing-icon {
-	background: url("../img/BillingIcon_blue.png");
+	background: url("../images/onboarding/BillingIcon_blue.png");
 	background-repeat: no-repeat;
     }
 .completed #confirmation-icon, .active #confirmation-icon {
-	background: url("../img/CheckIcon_blue.png");
+	background: url("../images/onboarding/CheckIcon_blue.png");
 	background-repeat: no-repeat;
     }
 
@@ -293,16 +293,16 @@ h2.onboarding-title {
 	}
 
 #cardtype-image.amex {
-	background-image: url("../img/Amex.png");
+	background-image: url("../images/onboarding/Amex.png");
     }
 #cardtype-image.mastercard {
-	background-image: url("../img/Mastercard.png");
+	background-image: url("../images/onboarding/Mastercard.png");
     }
 #cardtype-image.visa {
-	background-image: url("../img/Visa.png");
+	background-image: url("../images/onboarding/Visa.png");
     }
 #cardtype-image.discover {
-	background-image: url("../img/Discover.png");
+	background-image: url("../images/onboarding/Discover.png");
     }
 
 
@@ -322,15 +322,14 @@ h2.onboarding-title {
 	-moz-border-radius:42px;
 	-webkit-border-radius:42px;
 	border-radius:42px;
-	border:1px solid #bbbbbb;
+	border:1px solid #aaaaaa;
 	display:inline-block;
-	color: white;
+	color: #777777;
 	font-family:arial;
 	font-size:11px;
 	font-weight:600;
 	padding:1px 4px;
 	text-decoration:none;
-	/*text-shadow:1px 1px 0px #555555;*/
 	}
 
 .cvv-more-info:hover {
