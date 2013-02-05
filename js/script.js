@@ -1,8 +1,54 @@
 // JavaScript Document
-var THIS = this;
+var THIS = this,
+    default_trunk_price = 29.99,
+    default_amount_trunks = 1;
+
+if($('.pay-as-you-go').size() > 0) {
+    $('.pay-as-you-go #continue-btn').on('click', function() {
+        if(typeof(Storage)!=='undefined') {
+            delete sessionStorage['trunking_trunks_data'];
+
+            sessionStorage.setItem('trunking_trunks_data', JSON.stringify({
+                price: $('#totalcost-number').data('price') || default_trunk_price,
+                money: $('#amount_money').data('amount') || 0,
+                dids: $('#amount_numbers').data('number') || 0
+            }));
+        }
+    });
+}
+
+if($('.pay-trunks').size() > 0) {
+    $('.pay-trunks #continue-btn').on('click', function() {
+        if(typeof(Storage)!=='undefined') {
+            delete sessionStorage['trunking_trunks_data'];
+
+            sessionStorage.setItem('trunking_trunks_data', JSON.stringify({
+                price: $('#totalcost-number').data('price') || default_trunk_price,
+                trunks: $('#amount_twoway_trunks').data('number') || default_amount_trunks,
+                dids: $('#amount_numbers').data('number') || 0
+            }));
+        }
+    });
+}
 
 /* Wizard */
 if($('#onboarding_wrapper').size() > 0) {
+    if(typeof(Storage)!=='undefined') {
+        var data_trunks = JSON.parse(sessionStorage.getItem('trunking_trunks_data')) || { price: default_trunk_price, trunks: default_amount_trunks, dids: 0 };
+
+        if('money' in data_trunks) {
+            $('#amount_money').html('$' + data_trunks.money);
+            $('li #amount_twoway_trunks').parent().hide();
+        }
+        else {
+            $('#amount_twoway_trunks').html(data_trunks.trunks);
+            $('#amount_money').parent().hide();
+        }
+
+        $('#totalcost-number').html('$' + data_trunks.price);
+        $('#amount_numbers').html(data_trunks.dids);
+    }
+
     window.alert = function(message) {
         $('#override_javascript_alert').text(message).dialog({
             modal:true,
@@ -47,6 +93,8 @@ if($('#onboarding_wrapper').size() > 0) {
                         THIS.change_step(step, max_step, parent);
                     });
                 }
+
+                $('.next-step', parent).removeClass('summary');
             }
         });
 
