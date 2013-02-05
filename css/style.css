@@ -2583,8 +2583,12 @@ input#mc-embedded-subscribe:hover {
 	}
 
 #results {
-	margin-left: 17px;
+    margin-left: 17px;
 	}
+
+#results .number-wrapper {
+    margin: 2px 0;
+}
 
 .number-selection {
 	margin-bottom: 10px;

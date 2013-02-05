@@ -1,7 +1,15 @@
 // JavaScript Document
 var THIS = this,
     default_trunk_price = 29.99,
-    default_amount_trunks = 1;
+    default_amount_trunks = 1,
+    format_phone_number = function(phone_number) {
+        if(phone_number.substr(0,2) === "+1" && phone_number.length === 12) {
+            phone_number = phone_number.replace(/(\+1)(\d{3})(\d{3})(\d{4})/, '$1 ($2) $3-$4');
+        }
+
+        return phone_number;
+    };
+
 
 if($('.pay-as-you-go').size() > 0) {
     $('.pay-as-you-go #continue-btn').on('click', function() {
@@ -314,18 +322,19 @@ var update_data_trunks = function(trunks_amount) {
                           .attr('data-price', total_price);
 };
 
-var update_data_dids = function(trunks_amount) {
+var update_data_dids = function() {
     var price_did = 1.00,
+        dids_amount = $('.number-line').size();
         current_price = parseFloat($('#totalcost-number').attr('data-price')),
-        total_dids = (trunks_amount - parseInt($('#amount_numbers').attr('data-number') || 0))* price_did,
-        total_price = (total_dids + current_price).toFixed(2);
+        total_dids = (dids_amount - parseInt($('#amount_numbers').attr('data-number') || 0))* price_did,
+        total_price = (total_dids + current_price).toFixed(2),
 
     $('#totalcost-number').html('$'+ total_price)
                           .attr('data-price', total_price);
 
-    $('#number-amount').html(trunks_amount);
-    $('#amount_numbers').html(trunks_amount)
-                        .attr('data-number', trunks_amount);
+    $('#number-amount').html(dids_amount);
+    $('#amount_numbers').html(dids_amount)
+                        .attr('data-number', dids_amount);
 };
 
 var update_money = function(money_amount) {
@@ -382,30 +391,45 @@ $('#search-for-did-btn').on('click', function() {
 });
 
 $('#search-numbers').on('click', function() {
-    $('#results').slideDown();
+    $.getJSON('https://api.2600hz.com:8443/v1/phone_numbers', {prefix: parseInt($('.list-numbers #search-input').val()) || 415, quantity: 20}, function(response) {
+        $('#results .number-selection').empty();
+
+        if(response.data.length > 0) {
+            $('#submit_numbers').show();
+            response.data.sort();
+
+            $.each(response.data, function(k , v) {
+                if($('.remove-did[data-phone_number="'+ v +'"]').size() === 0) {
+                    $('<div class="number-wrapper"><label><input type="checkbox" data-phone_number="'+v+'">'+ THIS.format_phone_number(v) +'</input></label></div>').appendTo($('#results .number-selection'));
+                }
+                else {
+                    $('<div class="number-wrapper"><label><input type="checkbox" data-phone_number="'+v+'" checked>'+ THIS.format_phone_number(v) +'</input></label></div>').appendTo($('#results .number-selection'));
+                }
+            });
+        }
+        else {
+            $('<div class="number-wrapper"><label>There are no number available...</label></div>').appendTo($('#results .number-selection'));
+            $('#submit_numbers').hide();
+        }
+
+        $('#results').slideDown();
+    });
 });
 
 $('#submit_numbers').on('click', function() {
-    var format_phone_number = function(phone_number) {
-            if(phone_number.substr(0,2) === "+1" && phone_number.length === 12) {
-                phone_number = phone_number.replace(/(\+1)(\d{3})(\d{3})(\d{4})/, '$1 ($2) $3-$4');
-            }
-
-            return phone_number;
-        },
-        list_numbers = [];
+    var list_numbers = [];
 
     $('.number-wrapper input[type="checkbox"]:checked').each(function() {
         list_numbers.push($(this).data('phone_number'));
     });
 
-    $('#selected-numbers').empty();
-
     $.each(list_numbers, function(k, v) {
-        $('#selected-numbers').append('<li class="number-line">'+format_phone_number(v)+'<a class="remove-did" data-phone_number="'+v+'" href="#">remove</a></li>');
+        if($('.remove-did[data-phone_number="'+ v +'"]').size() === 0) {
+            $('#selected-numbers').append('<li class="number-line">'+THIS.format_phone_number(v)+'<a class="remove-did" data-phone_number="'+v+'" href="#">remove</a></li>');
+        }
     });
 
-    THIS.update_data_dids(list_numbers.length);
+    THIS.update_data_dids();
 
     $('#popup').dialog('close');
 });
@@ -415,7 +439,7 @@ $('#selected-numbers').on('click', '.remove-did', function() {
 
     $(this).parents('.number-line').first().remove();
 
-    THIS.update_data_dids(--nb_dids);
+    THIS.update_data_dids();
 });
 
 $('.topic-title').on('click', function() {
