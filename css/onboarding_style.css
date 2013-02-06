@@ -4,12 +4,13 @@
 
 /* **** INDEX PAGE STYLING **** */
 
-body {
-	margin:0
+html, body {
+	margin: 0;
+	height: 100%;
 	}
 
 .container {
-	display: block;
+	height: 100%;
 	}
 
 /* Header */
@@ -753,9 +754,22 @@ button#confirm-complete:active {
 	}
 
 
-/***************/
+/*************************************/
+/*        Sticky Footer Coding       */
+/*************************************/
 
 /**** ONBOARDING FOOTER  ****/
+
+.sticky-wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -40px;  /* the bottom margin is the negative value of the footer's height */
+	}
+
+.push {
+	height: 40px;
+	} 
 
 #onboarding-footer {
 	height: 40px;
