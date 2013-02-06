@@ -865,7 +865,7 @@ header {
 	padding-right: 25px;
 	border-right: 1px solid black;
 	border-left: 1px solid #444;
-	margin-right: -3px;
+	margin-right: -4px;
 	padding-top: 4px;
 	padding-bottom: 4px;
 	text-shadow: 1px 2px 1px black;
@@ -1830,14 +1830,14 @@ input#mc-embedded-subscribe:hover {
 	}
 
 #secondary-feature-content {
-	height: 395px;
+	height: 445px;
 	}
 
 #secondary-feature-content-wrap {
 	max-width: 940px;
-	height: 375px;
 	margin: auto;
 	margin-top: 40px;
+	overflow: hidden;
 	}
 
 #enterprise {
@@ -1860,14 +1860,14 @@ input#mc-embedded-subscribe:hover {
 	padding-left: 0;
 	margin-top: 26px;
 	font-size: 16px;
-	line-height: 28px;
+	line-height: 34px;
+	color: #444444;
 	}
 
 #interface {
 	float: right;
 	margin-top: 20px;
 	width: 430px;
-	height: 253px;
 	}
 
 #interface-title{
@@ -1880,8 +1880,16 @@ input#mc-embedded-subscribe:hover {
 
 #interface-img {
 	float: right;
-	margin-right: 38px;
 	margin-top: 29px;
+	}
+
+#interface-slideshow {
+	background-image: url("../images/1.jpg");
+	width: 336px;
+	height: 203px;
+	position: absolute;
+	margin-left: 12px;
+	margin-top: 12px;
 	}
 
 /* **** End FEATURES PAGE STYLING **** */
@@ -2870,7 +2878,7 @@ fieldset {
 /* **** Start FAQs PAGE STYLING **** */
 
 #faqs-main-content {
-	height: 5890px;
+	overflow: hidden;
 	background: url('../images/PhoneBG_clearbottom.png');
 	background-repeat: no-repeat;
 	background-position: top center;
@@ -2921,7 +2929,11 @@ fieldset {
 
 #topic-list li a:hover {
 	text-decoration: underline;
-	color: #F33;
+	color: #ff3333;
+	}
+
+#topic-list li a.active {
+	color: #ff3333;
 	}
 
 #topic1-wrapper {
