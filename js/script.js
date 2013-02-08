@@ -63,7 +63,7 @@ if($('#onboarding_wrapper').size() > 0) {
             title:'Validation Error',
             resizable: false,
             buttons: {
-                'OK':function(){
+                'Ok':function(){
                     $(this).dialog('close');
                 }
             }
@@ -199,7 +199,7 @@ if($('#onboarding_wrapper').size() > 0) {
         });
         if(validation_form_error) {
             validated = false;
-            error_message += '\n\nPlease check that you filled the input properly.';
+            error_message += '\n\nPlease check that you filled out all fields correctly.';
         }
 
         if(validated === true) {
