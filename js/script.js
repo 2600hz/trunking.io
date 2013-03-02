@@ -455,19 +455,21 @@ $('#blog-section').on('click', '.gf-title a', function(e) {
     window.open($(this).attr('href'));
 });
 
-/* Features Slide-Show */
+/* home page Make a Test Call interaction flow */
 
-$('#interface-slideshow').crossSlide({
-  sleep: 3,
-  fade: 1
-}, [
-    { src: '../images/1.jpg' },
-    { src: '../images/2.jpg' },
-    { src: '../images/3.jpg' },
-    { src: '../images/4.jpg' },
-    { src: '../images/5.jpg' },
-    { src: '../images/6.jpg' },
-    { src: '../images/7.jpg' }
-]);  
+$(document).ready(function() {
+    $('#credentials-slide').delay(1500).animate({paddingLeft:'302px'});
+    $('#countdown-slide').delay(2000).animate({paddingLeft:'312px'});
+    $('#rate-slide').delay(1500).animate({paddingLeft:'320px'});
+});
+
+/*$(document).ready(function() {
+    $('#rate').jRating({
+        step:true,
+        length: 5, // nb of stars
+        decimalLength: 0, // number of decimal in the rate
+        showRateInfo: false // no numbers shown on hover
+    });
+});*/
 
 

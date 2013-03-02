@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>TRUNKING.io</title>
     <link rel="stylesheet" href="js/plugins/tweets/jquery.tweet.css"/>
+        <!-- <link rel="stylesheet" href="js/plugins/jRating/jRating.jquery.css"/> -->
     <link rel="stylesheet" href="css/style.css"/>
     <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
     <!-- <link rel="icon" href="images/T_Favicon.ico"/> -->
@@ -24,52 +25,47 @@
 					<ul id="nav" class="menu">
 		                <li><a href="#">Log-in</a></li>
 					</ul>
-
-				</nav>
+                </nav>
             </div>
     	</header>
 
-
-
         <div id="main-content">
         	<div class="shadow-top"></div>
-
-            	<div class="content-wrap">
-
-                	<div id="other-pbx">
+                <div class="content-wrap">
+                    <div id="other-pbx">
                     	<img src="images/OtherPBXs.png" alt="Other PBXs"/>
                     </div>
 
                     <div id="content-right">
-                                <div class="page-title" id="home-title">
-                                    SIP TRUNKING MADE EASY
+                        <div class="page-title" id="home-title">
+                            SIP TRUNKING MADE EASY
+                        </div>
+
+                        <div class="sub-title" id="home-subtitle">
+                            Try right now. Without an account, a credit card or any fuss. It's that simple.
+                        </div>
+
+                        <div id="testcall-3step-wrapper">
+                            <div class="testcall-step step-active" id="testcall-step1">
+                                <div class="testcall-step-title">
+                                    1. Enter Credentials
                                 </div>
+                            </div>
 
-                                <div class="sub-title" id="home-subtitle">
-                                    Try right now. Without an account, a credit card or any fuss. It's that simple.
+                            <div class="testcall-step" id="testcall-step2">
+                                <div class="testcall-step-title">
+                                    2. Make A Test Call
                                 </div>
+                            </div>
 
-                                <div id="testcall-3step-wrapper">
-                                    <div class="testcall-step step-active" id="testcall-step1">
-                                        <div class="testcall-step-title">
-                                            1. Enter Credentials
-                                        </div>
-                                    </div>
-
-                                    <div class="testcall-step" id="testcall-step2">
-                                        <div class="testcall-step-title">
-                                            2. Make A Test Call
-                                        </div>
-                                    </div>
-
-                                    <div class="testcall-step" id="testcall-step3">
-                                        <div class="testcall-step-title">
-                                            3. Continue
-                                        </div>
-                                    </div>
+                            <div class="testcall-step" id="testcall-step3">
+                                <div class="testcall-step-title">
+                                    3. Continue
                                 </div>
+                            </div>
+                        </div> <!-- end testcall-3step-wrapper -->
 
-                                <div class="content-info">
+                        <div class="content-info">
                                     <!--
                                     <div id="make-call">
                                     	<div id="info">
@@ -87,55 +83,83 @@
                                             </a>
                                     	</div>
                                     </div>    -->
-
-                                    <div id="generated-info">
-                                        <div id="user">
-                                        	<div id="user-title">
-                                                Username
-                                            </div>
-
-                                            <div id="generated-user">
-                                            	Generated Name
-                                            </div>
+                            <div id="step1-credentials">
+                                <div id="generated-info">
+                                    <div id="user">
+                                    	<div id="user-title">
+                                            Username
                                         </div>
 
-                                        <div id="password">
-                                        	<div id="password-title">
-                                                Password
-                                            </div>
-
-                                            <div id="generated-password">
-                                            	Generated Password
-                                            </div>
+                                        <div id="generated-user">
+                                        	Generated Name
                                         </div>
-
-                                        <div id="ip">
-                                            <div id="ip-title">
-                                                IP Address
-                                            </div>
-
-                                            <div id="ip-number">
-                                                22.33.44.55
-                                            </div>
-
-                                        </div>
-
-
-
                                     </div>
-                                </div> <!-- end content-info -->
 
+                                    <div id="password">
+                                    	<div id="password-title">
+                                            Password
+                                        </div>
+
+                                        <div id="generated-password">
+                                        	Generated Password
+                                        </div>
+                                    </div>
+
+                                    <div id="ip">
+                                        <div id="ip-title">
+                                            IP Address
+                                        </div>
+
+                                        <div id="ip-number">
+                                            22.33.44.55
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="credentials-slide">
+                                    <h3>Making A Test Call</h3>
+                                    <p>A Username and Password have been automatically generated for you to test the Trunking.io service. After adding these credentials to your phone system, it will connect to the Trunking.io service and you will be able to place a test call to any number you'd like.</p>
+                                </div>
+                            </div> <!-- end step1 -->
+
+                            <div id="step2-makeCall" style="display:none;">
+                                <div id="notify-connected">
+                                    <h3>Congrats&#33;</h3>
+                                    <p>Your System is now connected<br> and you can make a 4 minute trial<br> call to any number you’d like.</p>
+                                </div>
+
+                                <div id="countdown-slide">
+                                    <h3>Trial Call In Progress...</h3>
+                                    <p>Remaining Trial Time</p>
+                                    <div id="timer">4:00</div>
+                                </div>
+                            </div> <!-- end step2 -->
+
+                            <div id="step3-callEnded" style="display:none;">
+                                <div id="notify-ended">
+                                    <h3>Trial Call Has Ended</h3>
+                                    <p>Thanks for using the Trunking.io trial call feature. If you’re eager to start using Trunking.io, click <a href="">here</a>.</p>
+                                </div>
+
+                                <div id="rate-slide">
+                                    <h3>Rate your call quality for us!</h3>
+                                    <div id="rate" data-average="2"></div>
+                                </div>
+                            </div> <!-- end step-3 -->
+
+
+
+
+
+
+                        </div> <!-- end content-info -->
                     </div> <!-- end content-right -->
-
                 </div> <!-- end content-wrap -->
+            <div class="shadow-bottom"></div>
 
-        	<div class="shadow-bottom"></div>
+        </div> <!-- end main-content -->
 
-
-       </div> <!-- end main-content -->
-
-
-       <div class="bottom-content">
+        <div class="bottom-content">
        		<div class="content-wrap-bottom">
 
                 <div id="left-info">
@@ -143,8 +167,7 @@
                     	<a href="html/monthly_pricing.html"></a>
                     </div>
 
-
-                	<div id="img-affordable">
+                    <div id="img-affordable">
                         <img src="images/PriceTag.png" alt="Affordable Trunk Pricing"/>
                     </div>
 
@@ -164,7 +187,6 @@
                         <div id="time">
                               month
                         </div>
-
                     </div>
                 </div> <!-- end left-info -->
 
@@ -188,7 +210,6 @@
                         <li>Failover</li>
                         <li>and many more!</li>
                     </ul>
-
                 </div> <!-- end right-info -->
 
                 <div id="get-started">
@@ -203,9 +224,7 @@
                     <div id="get-started-title">
                 		Get Started
                     </div>
-
                 </div> <!-- end get-started -->
-
             </div> <!-- end content-wrap-bottom -->
 
        </div> <!-- end bottom-content> -->
@@ -217,14 +236,12 @@
                 <div id="testimonial-1" class="testimonial">
                     <img class="quotemark" src="images/QuoteMark.png"/>
                     <p class="quote"><em>Trunking.io has the simplest configuration of any SIP Trunking system I’ve ever used.</em></p>
-
                     <h5 class="customer">Beta Tester Systems Administrator</h5>
                 </div>
 
                 <div id="testimonial-2"  class="testimonial">
                     <img class="quotemark" src="images/QuoteMark.png"/>
                     <p class="quote"><em>I can't believe how quickly we <br>were able to get up and running. <br>The difference between Trunking.io and traditional telecom is like <br>Night and Day.</em></p>
-
                     <h5 class="customer">CTO, Large ISP Voice Group</h5>
                 </div>
 
@@ -232,19 +249,16 @@
                 <div id="testimonial-3"  class="testimonial">
                     <img class="quotemark" src="images/QuoteMark.png"/>
                     <p class="quote"><em>With Trunking.io I can configure and manage all of my Phone Systems in one control panel. No more hold times waiting for a fix, I can control everything in just a few clicks.</em></p>
-
                     <h5 class="customer">Avaya IP Office Reseller</h5>
                 </div>
 
                 <div id="testimonial-4" class="testimonial">
                     <img class="quotemark" src="images/QuoteMark.png"/>
                     <p class="quote"><em>My old SIP Trunking provider hit <br>us with all kinds of hidden fees and setup charges! Trunking.io gave me honest, straightforward pricing that doesn't change every month.</em></p>
-
                     <h5 class="customer">IT Manager of Major Store Chain</h5>
                 </div>
             </div> <!-- end testimonial-wrap -->
         </div> <!-- end testimonial-section -->
-
 
         <div class="footer">
        		<div class="content-wrap-footer">
@@ -320,6 +334,7 @@
        </div> <!-- end footer -->
        <script type="text/javascript" src="js/jquery.js"></script>
        <!-- jQuery plugins -->
+            <!--<script type="text/javascript" src="js/plugins/jRating/jRating.jquery.min.js"></script>-->
        <script type="text/javascript" src="js/plugins/tweets/jquery.tweet.js"></script>
        <!-- Google plugins -->
        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
