@@ -4,7 +4,6 @@
  * This is the entry point for the APIs
  *
  * @author Francis Genet
- * @license MPL / GPLv2 / LGPL
  * @package Trunking.io
  * @version 1.0
  */
@@ -16,7 +15,6 @@ header('Access-Control-Allow-Origin:*');
 header('Access-Control-Max-Age:86400');*/
 
 require_once 'lib/restler/restler.php';
-use Luracast\Restler\Restler;
 
 $r = new Restler();
 $r->setSupportedFormats('JsonFormat');

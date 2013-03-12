@@ -4,7 +4,6 @@
  * Api class that will generate a random username and a random password
  *
  * @author Francis Genet
- * @license MPL / GPLv2 / LGPL
  * @package Trunking.io
  * @version 1.0
  */
