@@ -1,0 +1,11 @@
+{
+    "version": "1.0",
+
+    "database": {
+        "host": "localhost",
+        "port": 8889,
+        "username": "root",
+        "password": "root",
+        "db_name": "trunkingdotio"
+    }
+}

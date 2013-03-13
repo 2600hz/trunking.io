@@ -8,6 +8,10 @@
  * @version 1.0
  */
 
+define("ROOT_PATH", dirname(__FILE__) . '/');
+
+require_once 'helper/settings.php';
+
 // CORS
 /*header('Access-Control-Allow-Headers:Content-Type, Depth, User-Agent, X-File-Size, X-Requested-With, If-Modified-Since, X-File-Name, Cache-Control, X-Auth-Token');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');

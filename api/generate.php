@@ -15,6 +15,9 @@ class Generate {
      * @url GET /
      */
     function get() {
+        $objSettings = new Settings;
+        $settings = $objSettings->get_settings();
+
         $username = $this->_get_random('user_', 8);
         $password = $this->_get_random('', 10);
         $ip = $_SERVER['SERVER_ADDR'];
@@ -23,7 +26,8 @@ class Generate {
             'data' => array(
                 'username' => $username,
                 'password' => $password,
-                'ip' => $ip
+                'ip' => $ip,
+                'version' => $settings->version
             )
         );
     }
