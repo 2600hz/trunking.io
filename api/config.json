@@ -6,6 +6,7 @@
         "port": 8889,
         "username": "root",
         "password": "root",
-        "db_name": "trunkingdotio"
+        "dbname": "trunkingdotio",
+        "charset": "utf8"
     }
 }
