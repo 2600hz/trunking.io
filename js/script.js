@@ -461,6 +461,19 @@ $(document).ready(function() {
     $('#credentials-slide').delay(1500).animate({paddingLeft:'302px'});
     $('#countdown-slide').delay(2000).animate({paddingLeft:'312px'});
     $('#rate-slide').delay(1500).animate({paddingLeft:'320px'});
+
+    //generated credentials on index.html
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: "http://10.10.2.218:8888/trunking_io/api/generate",
+        contentType: "application/json",
+        crossDomain: true
+    }).done(function(msg){
+        $('#generated-user').html(msg.data.username);
+        $('#generated-password').html(msg.data.password);
+        $('#ip-number').html(msg.data.ip);
+    });
 });
 
 /*$(document).ready(function() {
