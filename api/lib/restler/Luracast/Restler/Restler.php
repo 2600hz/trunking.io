@@ -874,7 +874,7 @@ class Restler extends EventEmitter
     {
         $format = null;
         // check if client has sent any information on request format
-        if (isset($_SERVER['CONTENT_TYPE'])) {
+        if (!empty($_SERVER['CONTENT_TYPE'])) {
             $mime = $_SERVER['CONTENT_TYPE'];
             if (false !== $pos = strpos($mime, ';')) {
                 $mime = substr($mime, 0, $pos);
@@ -1061,7 +1061,9 @@ class Restler extends EventEmitter
 
         }
         $call = new stdClass;
-        $currentUrl = "v{$this->requestedApiVersion}/{$this->url}";
+        $currentUrl = 'v' . $this->requestedApiVersion;
+        if (!empty($this->url))
+            $currentUrl .= '/' . $this->url;
         $lc = strtolower($currentUrl);
         foreach ($urls as $url => $call) {
             $this->trigger('onRoute', array('url' => $url, 'target' => $call));
