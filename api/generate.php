@@ -11,6 +11,10 @@
 class Generate {
     private $_db = null;
 
+    function options() {
+        return;
+    }
+
     /**
      * will return an object with the generated information 
      *
@@ -39,7 +43,7 @@ class Generate {
         }
 
         // If there is a result then it means that the user is returning
-        if ($stmt->rowCount() > 0) {
+        if (count($rows) > 0) {
             $username = $rows[0]['username'];
             $password = $rows[0]['password'];
         } else {
