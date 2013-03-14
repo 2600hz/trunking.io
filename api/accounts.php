@@ -8,5 +8,74 @@
  * @version 1.0
  */
 
+class Accounts {
+    private $_curl = null;
+    private $_settings = null;
+    private $_auth_token = "";
+
+    function options() {
+        return;
+    }
+
+    private function _init_curl() {
+        $this->_curl = curl_init();
+
+        curl_setopt_array($this->_curl, array(
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_HTTPHEADER => array('Content-Type: application/json')
+        ));
+    }
+
+    private function _get_auth_token() {
+        $data = array(
+            "data" => array(
+                "api_key" => $this->_settings->api_key
+            )
+        );
+
+        curl_setopt_array($this->_curl, array(
+            CURLOPT_CUSTOMREQUEST => "PUT",
+            CURLOPT_URL => "http://apps001-qa-fmt.2600hz.com:8000/v1/api_auth",
+            CURLOPT_POSTFIELDS => json_encode($data)
+        ));
+
+        $response = json_decode(curl_exec($this->_curl));
+        $this->_auth_token = $response->auth_token;
+    }
+
+    private function _get_realm_random() {
+        $random = Utils::get_random("", 8);
+
+        return $random . ".sip.2600hz.com";
+    }
+
+    function __construct() {
+        // Loading settings
+        $objSettings = new Settings;
+        $this->_settings = $objSettings->get_settings();
+
+        $this->_init_curl();
+        $this->_get_auth_token();
+    }
+
+    /**
+     * will create an account and everything related to it 
+     *
+     * @url POST /
+     */
+    function create() {
+        $account_data = array(
+            "data" => array(
+                "name" => ""
+            )
+        );
+
+        curl_setopt_array($this->_curl, array(
+            CURLOPT_CUSTOMREQUEST => "PUT",
+            CURLOPT_URL => "http://apps001-qa-fmt.2600hz.com:8000/v1/accounts/" . $this->_settings->master_account_id . "/",
+            CURLOPT_POSTFIELDS => json_encode($data)
+        ));
+    }
+}
 
  ?>
