@@ -8,8 +8,22 @@
  * @version 1.0
  */
 
-class Generate {
+class Tempaccount {
     private $_db = null;
+    private $_settings = null;
+
+    function __construct() {
+        // Loading settings
+        $objSettings = new Settings;
+        $this->_settings = $objSettings->get_settings();
+
+        // Set the DSN (the string that determines what driver to user and how)
+        $dsn = "mysql:host=" . $this->_settings->database->host . ";dbname=" . $this->_settings->database->dbname . ";charset=" . $this->_settings->database->charset;
+        // Set the driver parameters
+        $drvr_params = array(PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
+        // Creating a connexion
+        $this->_db = new PDO($dsn, $this->_settings->database->username, $this->_settings->database->password, $drvr_params);
+    }
 
     function options() {
         return;
@@ -18,27 +32,16 @@ class Generate {
     /**
      * will return an object with the generated information 
      *
-     * @url GET /
+     * @url GET /credentials/
      */
-    function get() {
-        // Loading settings
-        $objSettings = new Settings;
-        $settings = $objSettings->get_settings();
-
-        // Set the DSN (the string that determines what driver to user and how)
-        $dsn = "mysql:host=" . $settings->database->host . ";dbname=" . $settings->database->dbname . ";charset=" . $settings->database->charset;
-        // Set the driver parameters
-        $drvr_params = array(PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
-        // Creating a connexion
-        $this->_db = new PDO($dsn, $settings->database->username, $settings->database->password, $drvr_params);
-
+    function credentials() {
         // First, let's try to get a match for the current client IP
         try {
             $stmt = $this->_db->query("SELECT * FROM clients WHERE ip = ?");
             $stmt->execute(array($_SERVER['REMOTE_ADDR']));
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
             throw new RestException(500, $e->getMessage());
         }
 
@@ -53,7 +56,7 @@ class Generate {
             try {
                 $stmt = $this->_db->prepare("INSERT INTO clients(ip, username, password) VALUES(?, ?, ?)");
                 $stmt->execute(array($client_ip, $username, $password));
-            } catch (Exception $e) {
+            } catch (PDOException $e) {
                 throw new RestException(500, $e->getMessage());
             }
         }
@@ -67,6 +70,32 @@ class Generate {
                 'ip' => $ip
             )
         );
+    }
+
+    /**
+     * will return an object with the generated information 
+     *
+     * @url GET /remaining/
+     */
+    function get_remaining() {
+        try {
+            $stmt = $this->_db->query("SELECT * FROM clients WHERE ip = ?");
+            $stmt->execute(array($_SERVER['REMOTE_ADDR']));
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            throw new RestException(500, $e->getMessage());
+        }
+
+        if (count($rows) > 0) {
+            $return_value = array(
+                "data" => array(
+                    "remaining_seconds" => $rows[0]['remaining']
+                )
+            );
+            
+            return $return_value;
+        } else 
+            throw new RestException(404, "No user corresponding to you");
     }
 }
 
