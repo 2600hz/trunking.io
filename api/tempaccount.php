@@ -73,7 +73,33 @@ class Tempaccount {
     }
 
     /**
-     * will return an object with the generated information 
+     * will return an object with the info on the phone registration
+     *
+     * @url GET /registered/
+     */
+    function get_registration() {
+        try {
+            $stmt = $this->_db->query("SELECT * FROM clients WHERE ip = ?");
+            $stmt->execute(array($_SERVER['REMOTE_ADDR']));
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            throw new RestException(500, $e->getMessage());
+        }
+
+        if (count($rows) > 0) {
+            $return_value = array(
+                "data" => array(
+                    "registered" => $rows[0]['registered']
+                )
+            );
+            
+            return $return_value;
+        } else 
+            throw new RestException(404, "No user corresponding to you");
+    }
+
+    /**
+     * will return an object with the remainig seconds for the call
      *
      * @url GET /remaining/
      */
@@ -92,7 +118,7 @@ class Tempaccount {
                     "remaining_seconds" => $rows[0]['remaining']
                 )
             );
-            
+
             return $return_value;
         } else 
             throw new RestException(404, "No user corresponding to you");
