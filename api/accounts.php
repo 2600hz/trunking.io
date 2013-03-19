@@ -101,7 +101,33 @@ class Accounts {
                 ),
                 "billing_account_id" => $this->_account_id,
                 "DIDs_Unassigned" => array(),
-                "servers" => array()
+                "servers" => array(
+                    array(
+                        "DIDs" => array(),
+                        "options" => array(
+                            "enabled" => true,
+                            "inbound_format" => "e.164",
+                            "international" => false,
+                            "caller_id" => array(),
+                            "e911_info" => array(),
+                            "failover" => array(),
+                            "media_handling" => "bypass"
+                        ),
+                        "permissions" => array(
+                            "users" => array()
+                        ),
+                        "monitor" => array(
+                            "monitor_enabled" => false
+                        ),
+                        "auth" => array(
+                            "auth_user" => "username",
+                            "auth_password" => "password",
+                            "auth_method" => "Password"
+                        ),
+                        "server_name" => "My test PBX",
+                        "server_type" => "other"
+                    )
+                )
             )
         );
 
@@ -130,7 +156,10 @@ class Accounts {
         ));
 
         $response = json_decode(curl_exec($this->_curl));
-        print_r($response);
+        if ($response->status == "success")
+            return true;
+        else
+            return false;
     }
 
     // Adding a credit card
@@ -158,7 +187,8 @@ class Accounts {
         else
             throw new RestException(500, "Could not create the trunkstore account");
 
-        $this->_set_limits($request_data);
+        if (!$this->_set_limits($request_data))
+            throw new RestException(500, "Could not save the limits");
     }
 }
 
