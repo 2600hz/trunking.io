@@ -29,31 +29,30 @@
             </div>
     	</header>
 
-        <div id="main-content" class="pay-as-you-go">
+        <div id="PAYG-mainContent" class="pay-as-you-go">
             <div class="shadow-top"></div>
 
                 <div class="content-wrap">
                     <div class="page-title" id="payasyougo-title">
-                        PAY-AS-YOU-GO SERVICE
+                        PAY-AS-YOU-GO SERVICES
                     </div>
 
                     <div class="sub-title" id="payasyougo-subtitle">
-                        <p> Set up and manage your per-minute <br/>
-                            based account options and balance. </p>
+                        <p> Here you can set up and manage your <br/>
+                            P-A-Y-G account options and balance.</p>
                     </div>
 
                     <div id="customizing-content">
-
                         <div id="customize-interactive">
-                            <div id="choose-trunks">
-
-                                <div id="choose-trunks-info">
-                                    <div id="choose-trunks-title">
-                                        Add Money To Balance
+                            
+                            <div id="choose-creditAmount">
+                                <div id="choose-creditAmount-info">
+                                    <div id="choose-creditAmount-title">
+                                        Add Credit To Balance
                                     </div>
                                 </div>
 
-                                <div id="trunk-slider-wrapper">
+                                <div id="dropDown-wrapper">
                                     <div id="drop-down-amount">
                                         <div id="divider-amount">
                                         </div>
@@ -104,10 +103,9 @@
                             </div> <!-- end choose-trunks-->
 
                             <div id="inbound-did-number">
-
                                 <div id="choose-number-info">
                                     <div id="choose-number-title">
-                                        Inbound DID Number
+                                        DIDs &#40;Numbers&#41;
                                     </div>
 
                                     <div id="choose-number-secondary">
@@ -118,10 +116,10 @@
                                         <div id="number-info-btn">
                                             <a class="more-info">?
                                                 <span>
-                                                    <h5>Inbound DID Number</h5>
+                                                    <h5>Selecting DIDs / Numbers</h5>
                                                     <p>
-                                                        Delivers inbound calls to a registered <br>
-                                                        trunk via the trunking service.
+                                                        Delivers inbound/ outbound calls to a <br>
+                                                        registered trunk via the trunking service.
                                                     </p>
                                                 </span>
                                             </a>
@@ -143,21 +141,12 @@
                             <div id="promo-code">
                                 <input type="text" name="Promo Code" value="Promo Code" disabled="disabled"/>
                             </div>
-
-                            <div id="continue-btn-wrapper">
-                                <div id="continue-btn">
-                                    <a href="onboarding.html"></a>
-                                    <h3>Continue</h3>
-                                    <img src="../images/continue_btn_arrow.png"/>
-                                </div>
-                            </div>
-
                         </div> <!-- end customize-interactive-->
 
                         <div id="order-review">
 
                             <div id="totalcost-title">
-                                Total Cost
+                                Total Credit
                             </div>
 
                             <div id="totalcost-number" data-price="0.00">
@@ -173,20 +162,24 @@
                                 <li><strong id="amount_numbers">0</strong> Inbound DID Numbers</li>
                             </ul>
 
-                            <ul id="selected-numbers">
-                            </ul>
+                            <ul id="selected-numbers"></ul>
                         </div>
 
+                        <div id="continue-btn">
+                            <a href="onboarding.html"></a>
+                            <h3>Continue</h3>
+                            <img src="../images/continue_btn_arrow.png"/>
+                        </div>
 
                      </div> <!-- customizing-content -->
 
                 </div> <!-- end content-wrap -->
 
-            <div class="shadow-bottom"></div>
+            <div id="PAYG-shadowBottom"></div>
         </div> <!-- end main-content -->
 
         <div id="bottom-section">
-            <h3>Are you looking for our <a href="../html/purchase_trunks.html">Monthly Payment</a> service? </h3>
+            <h3>Are you looking for our <a href="purchase_monthly.html">Monthly Payment</a> service? </h3>
         </div>
 
         <div class="footer">
@@ -207,7 +200,7 @@
                 </ul>
 
                 <div class="btn-gettrunks">
-                    <a href="../html/purchase_trunks.html">Get Trunks</a>
+                    <a href="purchase_monthly.html">Get Trunks</a>
                 </div>
             </div> <!-- end content-wrap-footer -->
 
@@ -215,7 +208,7 @@
 
                 <div id="connect-section" class="link-section">
                     <h2 id="signup">Sign up for Newsletter</h2>
-                    <img src="../images/newsletter.png"/>
+                    <img src="../images/newsletter_grey.png"/>
 
                     <div id="subscribe-wrapper" class="content-section">
                         <div id="subscribe">
@@ -236,7 +229,7 @@
 
                 <div id="tweets-section" class="link-section">
                     <h2 id="read-tweets">Read our recent tweets</h2>
-                    <img id="tweeticon" src="../images/ReadTweets.png"/>
+                    <img id="tweeticon" src="../images/ReadTweets_grey.png"/>
 
                     <div id="tweets-wrapper" class="content-section">
                     </div>
@@ -244,7 +237,7 @@
 
                 <div id="blog-section" class="link-section">
                     <h2 id="read-blog">Read our recent blog posts</h2>
-                    <img src="../images/FollowBlog.png"/>
+                    <img src="../images/FollowBlog_grey.png"/>
 
                     <div id="blog-wrapper" class="content-section">
                     </div>

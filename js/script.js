@@ -309,13 +309,27 @@ if(typeof google !== 'undefined') {
 
 /* Beginning of our JS */
 var update_data_trunks = function(trunks_amount) {
-    var twoway_price = 29.99,
+    var twoway_price = 6.99,
         total_amount_twoway = (trunks_amount - parseInt($('#amount_twoway_trunks').attr('data-number') || 1)) * twoway_price,
         current_price = parseFloat($('#totalcost-number').attr('data-price')),
         total_price = (current_price + total_amount_twoway).toFixed(2);
 
     $('#slider-amount').html(trunks_amount);
     $('#amount_twoway_trunks').html(trunks_amount)
+                              .attr('data-number', trunks_amount);
+
+    $('#totalcost-number').html('$'+ total_price)
+                          .attr('data-price', total_price);
+};
+
+var update_data_outboundTrunks = function(trunks_amount) {
+    var twoway_price = 24.99,
+        total_amount_twoway = (trunks_amount - parseInt($('#amount_outbound_trunks').attr('data-number') || 1)) * twoway_price,
+        current_price = parseFloat($('#totalcost-number').attr('data-price')),
+        total_price = (current_price + total_amount_twoway).toFixed(2);
+
+    $('#ouboundSlider-amount').html(trunks_amount);
+    $('#amount_outbound_trunks').html(trunks_amount)
                               .attr('data-number', trunks_amount);
 
     $('#totalcost-number').html('$'+ total_price)
@@ -366,6 +380,16 @@ $('#trunk-slider').slider({
     value: 1,
     slide: function( event, ui ) {
         THIS.update_data_trunks(ui.value);
+    }
+});
+
+$('#outboundTrunk-slider').slider({
+    min: 1,
+    max: 20,
+    range: 'min',
+    value: 1,
+    slide: function( event, ui ) {
+        THIS.update_data_outboundTrunks(ui.value);
     }
 });
 
@@ -459,14 +483,13 @@ $('#blog-section').on('click', '.gf-title a', function(e) {
 
 $(document).ready(function() {
     $('#credentials-slide').delay(1500).animate({paddingLeft:'302px'});
-    $('#countdown-slide').delay(2000).animate({paddingLeft:'312px'});
     $('#rate-slide').delay(1500).animate({paddingLeft:'320px'});
 
     //generated credentials on index.html
     $.ajax({
         type: "GET",
         dataType: "json",
-        url: "http://10.10.2.218:8888/trunking_io/api/generate",
+        url: "http://10.10.2.218:8888/trunking_io/api/tempaccount/credentials",
         contentType: "application/json",
         crossDomain: true
     }).done(function(msg){
@@ -474,6 +497,37 @@ $(document).ready(function() {
         $('#generated-password').html(msg.data.password);
         $('#ip-number').html(msg.data.ip);
     });
+
+    //credentials registered
+    var thisInterval = setInterval(function(){
+        $.ajax({
+            type: "GET",
+            url: "http://10.10.2.221:8888/trunking_io/api/tempaccount/registered",
+            dataType: "json",
+            contentType: "application/json"
+        }).done(function(msg){
+            if(msg.data.registered == '1'){
+                $('#step1-credentials').hide();
+                $('#testcall-step1').removeClass('step-active');
+                $('#testcall-step2').addClass('step-active');
+                $('#step2-makeCall').show();
+
+                $('#countdown-slide').delay(2000).animate({paddingLeft:'312px'},400, "swing", function(){
+                    $.ajax({
+                        type: "GET",
+                        url: "http://10.10.2.221:8888/trunking_io/api/tempaccount/remaining",
+                        dataType: "json",
+                        contentType: "application/json"
+                    }).done(function(msg){
+                        console.log(msg.data.remaining_seconds);
+                    });
+                });
+                clearInterval(thisInterval);
+            }
+        });
+    },5000);
+
+    //time remaining countdown
 });
 
 /*$(document).ready(function() {

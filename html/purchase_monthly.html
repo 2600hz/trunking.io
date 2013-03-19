@@ -29,40 +29,39 @@
             </div>
     	</header>
 
-        <div id="main-content" class="pay-trunks">
+        <div id="payMonthly-mainContent" class="pay-trunks">
             <div class="shadow-top"></div>
 
                 <div class="content-wrap">
                     <div class="page-title" id="customizetrunks-title">
-                        CUSTOMIZE YOUR SIP TRUNKS
+                        SET UP YOUR MONTHLY SERVICES
                     </div>
 
                     <div class="sub-title" id="customizetrunks-subtitle">
-                        <p> No minimums, no maximums, <br />
-                            no contracts. Active instantly. </p>
+                        <p> No hidden contracts. <br />
+                            Available instantly. </p>
                     </div>
 
                     <div id="customizing-content">
-
                         <div id="customize-interactive">
+                            
                             <div id="choose-trunks">
-
                                 <div id="choose-trunks-info">
                                     <div id="choose-trunks-title">
-                                        Unlimited Two-Way Trunks
+                                        Unlimited <span>Inbound</span> Trunks
                                     </div>
 
                                     <div id="choose-trunks-secondary">
                                         <div id="price-per-trunk">
-                                            $29.99/ month
+                                            $6.99/ month
                                         </div>
 
                                         <div id="trunk-info-btn">
                                             <a class="more-info">?
                                                 <span>
-                                                    <h5>Unlimited Two-Way Trunks</h5>
+                                                    <h5>Unlimited Inbound Trunks</h5>
                                                     <p>
-                                                        Allows for inbound/ outbound trunk use.
+                                                        Allows for inbound trunk use.
                                                     </p>
                                                 </span>
                                             </a>
@@ -80,14 +79,51 @@
                                         1
                                     </div>
                                 </div>
-
                             </div> <!-- end choose-trunks-->
 
-                            <div id="inbound-did-number">
+                            <!-- Needs to be added to the javascript for functionality -->
+                            <!-- ***************************************************** -->
+                            <div id="choose-outboundTrunks">
+                                <div id="choose-trunks-info">
+                                    <div id="choose-trunks-title">
+                                        Unlimited <span>Outbound</span> Trunks
+                                    </div>
 
+                                    <div id="choose-trunks-secondary">
+                                        <div id="price-per-trunk">
+                                            $24.99/ month
+                                        </div>
+
+                                        <div id="trunk-info-btn">
+                                            <a class="more-info">?
+                                                <span>
+                                                    <h5>Unlimited Outbound Trunks</h5>
+                                                    <p>
+                                                        Allows for outbound trunk use.
+                                                    </p>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="outboundTrunk-slider-wrapper">
+                                    <div id="outboundTrunk-slider">
+                                    </div>
+                                </div>
+
+                                <div id="slider-amount-container">
+                                    <div id="outboundSlider-amount">
+                                        0
+                                    </div>
+                                </div>
+                            </div> <!-- end choose-trunks-->
+                            <!-- ***************************************************** -->
+
+                            <div id="inbound-did-number">
                                 <div id="choose-number-info">
                                     <div id="choose-number-title">
-                                        Inbound DID Number
+                                        DIDs &#40;Numbers&#41;
                                     </div>
 
                                     <div id="choose-number-secondary">
@@ -98,10 +134,10 @@
                                         <div id="number-info-btn">
                                             <a class="more-info">?
                                                 <span>
-                                                    <h5>Inbound DID Number</h5>
+                                                    <h5>Selecting DIDs / Numbers</h5>
                                                     <p>
-                                                        Delivers inbound calls to a registered <br>
-                                                        trunk via the trunking service.
+                                                        Delivers inbound/ outbound calls to a <br>
+                                                        registered trunk via the trunking service.
                                                     </p>
                                                 </span>
                                             </a>
@@ -123,21 +159,11 @@
                             <div id="promo-code">
                                 <input type="text" name="Promo Code" value="Promo Code" disabled="disabled"/>
                             </div>
-
-                            <div id="continue-btn-wrapper">
-                                <div id="continue-btn">
-                                    <a href="onboarding.html"></a>
-                                    <h3>Continue</h3>
-                                    <img src="../images/continue_btn_arrow.png"/>
-                                </div>
-                            </div>
-
                         </div> <!-- end customize-interactive-->
 
                         <div id="order-review">
-
                             <div id="totalcost-title">
-                                Total Cost
+                                Monthly Cost
                             </div>
 
                             <div id="totalcost-number" data-price="29.99">
@@ -149,20 +175,25 @@
                             </div>
 
                             <ul id="ordersummary-list">
-                                <li><strong id="amount_twoway_trunks">1</strong> Unlimited Two-Way Trunks</li>
-                                <li><strong id="amount_numbers">0</strong> Inbound DID Numbers</li>
+                                <li><strong id="amount_twoway_trunks">0</strong> Inbound &#40;unlimited&#41; Trunks</li>
+                                <li><strong id="amount_outbound_trunks">0</strong> Outbound &#40;unlimited&#41; Trunks</li>
+                                <li><strong id="amount_numbers">0</strong> DID Numbers</li>
                             </ul>
 
-                            <ul id="selected-numbers">
-                            </ul>
+                            <ul id="selected-numbers"></ul>
                         </div>
 
+                        <div id="continue-btn">
+                            <a href="onboarding.html"></a>
+                            <h3>Continue</h3>
+                            <img src="../images/continue_btn_arrow.png"/>
+                        </div>
 
                      </div> <!-- customizing-content -->
 
                 </div> <!-- end content-wrap -->
 
-            <div class="shadow-bottom"></div>
+            <div id="payMonthly-shadowBottom"></div>
         </div> <!-- end main-content -->
 
         <div id="bottom-section">
@@ -187,7 +218,7 @@
                 </ul>
 
                 <div class="btn-gettrunks">
-                    <a href="../html/purchase_trunks.html">Get Trunks</a>
+                    <a href="#">Get Trunks</a>
                 </div>
             </div> <!-- end content-wrap-footer -->
 
@@ -195,7 +226,7 @@
 
                 <div id="connect-section" class="link-section">
                     <h2 id="signup">Sign up for Newsletter</h2>
-                    <img src="../images/newsletter.png"/>
+                    <img src="../images/newsletter_grey.png"/>
 
                     <div id="subscribe-wrapper" class="content-section">
                         <div id="subscribe">
@@ -216,7 +247,7 @@
 
                 <div id="tweets-section" class="link-section">
                     <h2 id="read-tweets">Read our recent tweets</h2>
-                    <img id="tweeticon" src="../images/ReadTweets.png"/>
+                    <img id="tweeticon" src="../images/ReadTweets_grey.png"/>
 
                     <div id="tweets-wrapper" class="content-section">
                     </div>
@@ -224,7 +255,7 @@
 
                 <div id="blog-section" class="link-section">
                     <h2 id="read-blog">Read our recent blog posts</h2>
-                    <img src="../images/FollowBlog.png"/>
+                    <img src="../images/FollowBlog_grey.png"/>
 
                     <div id="blog-wrapper" class="content-section">
                     </div>
