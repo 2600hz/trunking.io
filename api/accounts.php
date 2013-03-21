@@ -190,8 +190,8 @@ class Accounts {
     private function _set_limits($request_data) {
         $limits_data = array(
             "data" => array(
-                "twoway_trunks" => 1,
-                "inbound_trunks" => 1
+                "twoway_trunks" => $request_data['data']['trunks']['twoway_trunks'],
+                "inbound_trunks" => $request_data['data']['trunks']['inbound_trunks']
             )
         );
 
