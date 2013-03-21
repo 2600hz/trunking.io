@@ -66,7 +66,7 @@ class Accounts {
 
         $account_data = array(
             "data" => array(
-                "name" => "Test account",
+                "name" => $request_data['data']['account']['name'],
                 "realm" => $this->_realm,
                 "timezone" => "America/Los_Angeles"
             )
@@ -91,7 +91,6 @@ class Accounts {
     private function _create_trunkstore_account($request_data) {
         $trunkstore_account_data = array(
             "data" => array(
-                "name" => $request_data['data']['account']['name'],
                 "available_apps" => $request_data['data']['account']['available_apps'],
                 "account" => array(
                     "credits" => array(
@@ -148,7 +147,6 @@ class Accounts {
                 "email" => $request_data['data']['user']['email'],
                 "first_name" => $request_data['data']['user']['first_name'],
                 "last_name" => $request_data['data']['user']['last_name'],
-                "timezone" => "America/Los_Angeles",
                 "priv_level" => $request_data['data']['user']['priv_level'],
                 "verified" => false,
                 "record_call" => false,
