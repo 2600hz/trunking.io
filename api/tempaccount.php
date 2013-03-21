@@ -25,7 +25,21 @@ class Tempaccount {
         $this->_db = new PDO($dsn, $this->_settings->database->username, $this->_settings->database->password, $drvr_params);
     }
 
-    function options() {
+    /**
+     * will return an object with the generated information 
+     *
+     * @url OPTIONS /credentials/
+     */
+    function options_credential() {
+        return;
+    }
+
+    /**
+     * will return an object with the generated information 
+     *
+     * @url OPTIONS /registered/
+     */
+    function options_registered() {
         return;
     }
 
