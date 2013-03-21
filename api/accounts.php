@@ -202,9 +202,6 @@ class Accounts {
         ));
 
         $response = json_decode(curl_exec($this->_curl));
-
-        print_r($response);
-
         if ($response->status == "success")
             return true;
         else
