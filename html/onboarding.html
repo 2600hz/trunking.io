@@ -13,7 +13,7 @@
 
     <body>
     	<div id="onboarding_wrapper" class="container">
-            <div class="sticky-wrapper">	
+            <div class="sticky-wrapper">
                 <header>
                 	<div class="row">
                         <div class="logo">
@@ -170,7 +170,7 @@
                                             <span class="required">*</span>
                                         </label>
                                     </div>
-                                    <input type="text" required name="billing-expiration" id="billing-expiration" placeholder="***">
+                                    <input type="text" required name="billing-cvv" id="billing-cvv" placeholder="***">
                                 </div>
 
                                 <div class="horizontal-line"></div>
@@ -344,7 +344,8 @@
                                     </div>
 
                                     <ul id="ordersummary-list">
-                                        <li><strong id="amount_twoway_trunks">1</strong> Unlimited Two-Way Trunks</li>
+                                        <li><strong id="amount_twoway_trunks">1</strong> Unlimited Outbound Trunks</li>
+                                        <li><strong id="amount_inbound_trunks">1</strong> Unlimited Inbound Trunks</li>
                                         <li><strong id="amount_money">$0.00</strong> Pay As-you-go Balance</li>
                                         <li><strong id="amount_numbers">0</strong> Inbound DID Numbers</li>
                                     </ul>
@@ -391,7 +392,7 @@
 
                 <div class="push"></div>
             </div> <!-- end STICKY-WRAPPER -->
-            
+
             <div id="onboarding-footer">
                 <div id="footer-legal-wrap">
                     <div id="terms-onboarding">
@@ -406,6 +407,7 @@
             <script type="text/javascript" src="../js/UI/jquery-ui-1.9.1.custom.min.js"></script>
             <!-- jQuery plugins -->
             <script type="text/javascript" src="../js/script.js"></script>
+            <script type="text/javascript" src="../js/plugins/md5_generator.js"></script>
         </div> <!-- end CONTAINER -->
 
     </body> <!-- end BODY -->
