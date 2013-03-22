@@ -344,6 +344,8 @@ if($('#onboarding_wrapper').size() > 0) {
                             },
                             credentials: $.md5(username+':'+password),
                             email: email,
+                            username: username,
+                            password: password,
                             first_name: first_name,
                             last_name: last_name,
                             priv_level: 'admin'
