@@ -145,6 +145,12 @@ header {
 	text-shadow: 0px -1px 0px rgba(0, 0, 0, 1);
 	}
 
+@-moz-document url-prefix() {
+	.page-title {
+		font-size: 47px;
+	}
+}
+
 #home-title {
 	margin-top: -12px;
 	}
@@ -823,6 +829,14 @@ header {
 	letter-spacing: 1px;
 	margin-right: 45px;
 	}
+
+@-moz-document url-prefix() {
+	#time {
+		margin-left: 130px;
+    	margin-right: 41px;
+    	margin-top: -9px;
+	}
+}
 
 /* right-info */
 
