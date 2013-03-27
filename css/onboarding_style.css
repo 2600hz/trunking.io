@@ -15,13 +15,13 @@ html, body {
 
 /* Header */
 
-.row {
+.headerRow {
 	margin: 0 auto;
 	max-width: 940px;
 	display: block;
 	}
 
-.row::after {
+.headerRow::after {
 	content: "";
 	display: block;
 	clear: both;
@@ -441,6 +441,12 @@ h2.onboarding-title {
 	margin-left: 15px;
 	font-size: 16px;
 	}
+
+@-moz-document url-prefix() {
+	#billing-country {
+		font-size: 14px;
+	}
+}
 
 .side-note {
 	font-size: 13px;
