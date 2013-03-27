@@ -1570,105 +1570,58 @@ input#mc-embedded-subscribe:hover {
 	height: 180px;
 	margin-top: 35px;
 	}
-
-#monthly-price-subtitle {
+.row.titles {
 	color: #444444;
 	font-family: 'Maven Pro', sans-serif;
 	font-size: 11px;
 	letter-spacing: 1px;
 	display: inline-block;
-	position: absolute;
 	margin-top: 22px;
-	margin-left: 39px;
-	}
+    text-align: center;
+}
 
-#outboundPrice-subtitle {
-	color: #444444;
-	font-family: 'Maven Pro', sans-serif;
-	font-size: 11px;
-	letter-spacing: 1px;
-	display: inline-block;
-	position: absolute;
-	margin-top: 22px;
-	margin-left: 232px;
-	}
+.row > * {
+    float: left;
+    width: 204px;
+    text-align: center;
+}
 
-#inboundTrunk-price {
-	float: left;
-	margin-left: 23px;
-	margin-top: 40px;
-	}
+.row.prices .price-right {
+    float: left;
+}
 
-.inboundTrunk-dollars {
-	font-size: 75px;
-	color: #666666;
-	font-family: 'Maven Pro', sans-serif;
-	font-weight: 600;
-	text-shadow: 0px -2px 0px rgba(0, 0, 0, 1);
-	float: left;
-	letter-spacing: -6px;
-	margin-right: 8px;	
-	}
+.row.prices .price-wrapper {
+    display: inline-block;
+}
 
-.inboundTrunk-cents {
-	font-size: 36px;
-	color: #666666;
-	font-family: 'Maven Pro', sans-serif;
-	font-weight: 600;
-	text-shadow: 0px -2px 0px rgba(0, 0, 0, 1);
-	margin-top: 10px;
-	margin-bottom: -7px;
-	letter-spacing: -2px;
-	}
-
-#inboundTrunk-time {
-	font-family: 'Maven Pro', sans-serif;
-	font-size: 11px;
-	font-weight: 400;
-	color: #444444;
-	text-shadow: 0px -1px 0px rgba(0, 0, 0, 1);
-	margin-left: 87px;
-	letter-spacing: 1px;
-	}
-
-#outboundTrunk-price {
-	float: left;
-	margin-left: 50px;
-	margin-top: 40px;
-	}
-
-.outboundTrunk-dollars {
-	font-size: 75px;
-	color: #666666;
-	font-family: 'Maven Pro', sans-serif;
-	font-weight: 600;
-	text-shadow: 0px -2px 0px rgba(0, 0, 0, 1);
-	float: left;
-	letter-spacing: -6px;
-	margin-right: 8px;
-	}
-
-.outboundTrunk-cents {
-	font-size: 36px;
-	color: #666666;
-	font-family: 'Maven Pro', sans-serif;
-	font-weight: 600;
-	text-shadow: 0px -2px 0px rgba(0, 0, 0, 1);
-	float: right;
-	margin-top: 10px;
-	margin-bottom: -7px;
-	letter-spacing: -2px;	
-	}
-
-#outboundTrunk-time {
-	font-family: 'Maven Pro', sans-serif;
-	font-size: 11px;
-	font-weight: 400;
-	color: #444444;
-	text-shadow: 0px -1px 0px rgba(0, 0, 0, 1);
-	margin-left: 128px;
-	letter-spacing: 1px;	
-	}
+.row.prices .price-dollars{
+    color: #666666;
+    float: left;
+    font-family: 'Maven Pro',sans-serif;
+    font-size: 75px;
+    font-weight: 600;
+    letter-spacing: -6px;
+    margin-right: 8px;
+    text-shadow: 0 -2px 0 #000000;
+}
+.row.prices .price-cents{
+    color: #666666;
+    font-family: 'Maven Pro',sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -2px;
+    margin-bottom: -7px;
+    margin-top: 10px;
+    text-shadow: 0 -2px 0 #000000;
+}
+.row.prices .price-month{
+    color: #444444;
+    font-family: 'Maven Pro',sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-shadow: 0 -1px 0 #000000;
+}
 
 #pricing-rightColumn {
 	display: inline-block;
@@ -1696,10 +1649,12 @@ input#mc-embedded-subscribe:hover {
 	font-family: 'Maven Pro', sans-serif;
 	font-size: 20px;
 	font-weight: 700;
-	padding: 15px 63px;
+    padding: 15px;
 	text-decoration: none;
+    text-align: center;
 	float: right;
 	margin-top: 60px;
+    width: 195px;
 	}
 
 .btn-buytrunks:hover {
@@ -2047,7 +2002,7 @@ input#mc-embedded-subscribe:hover {
 	float: right;
 	margin-top: -58px;
 	}
- 
+
 .btn-getstarted {
 	background: #2dbcff;
 	background: -moz-linear-gradient(top, #2dbcff 50%, #009ce5 100%);
