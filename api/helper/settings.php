@@ -1,7 +1,7 @@
 <?php 
 
 /**
- * Represent the class that will manage the provisioner's settings
+ * Represent the class that will manage the T.io's settings
  *
  * @author Francis Genet
  * @package Trunking.io

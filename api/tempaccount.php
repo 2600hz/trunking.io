@@ -26,20 +26,12 @@ class Tempaccount {
     }
 
     /**
-     * will return an object with the generated information 
+     * Option requests
      *
      * @url OPTIONS /credentials/
-     */
-    function options_credential() {
-        return;
-    }
-
-    /**
-     * will return an object with the generated information 
-     *
      * @url OPTIONS /registered/
      */
-    function options_registered() {
+    function options() {
         return;
     }
 
