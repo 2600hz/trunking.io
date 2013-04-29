@@ -1,6 +1,6 @@
 <?php
 
-$auth_ip = array('::1');
+$auth_ip = array('74.82.47.147');
 
 if (!in_array($_SERVER['REMOTE_ADDR'], $auth_ip))
     die();
