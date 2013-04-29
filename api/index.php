@@ -21,6 +21,8 @@ header('Access-Control-Max-Age:86400');
 
 require_once 'lib/restler/restler.php';
 
+use Luracast\Restler\Restler;
+
 $r = new Restler();
 $r->setSupportedFormats('JsonFormat');
 $r->addAPIClass('tempaccount');
