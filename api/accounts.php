@@ -16,6 +16,19 @@ class Accounts {
     private $_realm = "";
     private $_trunkstore_account_id = "";
 
+    function __construct() {
+        // Loading settings
+        $objSettings = new Settings;
+        $this->_settings = $objSettings->get_settings();
+
+        $this->_init_curl();
+        $this->_get_auth_token();
+    }
+
+    function __destruct() {
+        curl_close($this->_curl);
+    }
+
     function options() {
         return;
     }
@@ -25,7 +38,7 @@ class Accounts {
 
         curl_setopt_array($this->_curl, array(
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_HTTPHEADER => array('Content-Type: application/json')
+            CURLOPT_HTTPHEADER => array('Content-Type: text/xml')
         ));
     }
 
@@ -49,15 +62,6 @@ class Accounts {
     private function _get_realm_random() {
         $random = Utils::get_random("", 8);
         $this->_realm = $random . ".sip.2600hz.com";
-    }
-
-    function __construct() {
-        // Loading settings
-        $objSettings = new Settings;
-        $this->_settings = $objSettings->get_settings();
-
-        $this->_init_curl();
-        $this->_get_auth_token();
     }
 
     // Create main account
