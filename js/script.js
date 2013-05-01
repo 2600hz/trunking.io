@@ -1,6 +1,7 @@
 // JavaScript Document
 var THIS = this,
     default_api_url = 'https://api.2600hz.com:8443/v1',
+    default_frifri_api = 'http://localhost:8888/trunking_io/api/',
     default_trunk_price = 6.99,
     default_outbound_trunk_price = 24.99,
     default_amount_trunks = 1,
@@ -626,7 +627,7 @@ $(document).ready(function() {
     $.ajax({
         type: "GET",
         dataType: "json",
-        url: "http://10.10.2.221:8888/trunking_io/api/tempaccount/credentials",
+        url: default_frifri_api + "tempaccount/credentials",
         contentType: "application/json",
         crossDomain: true
     }).done(function(msg){
@@ -648,7 +649,7 @@ $(document).ready(function() {
     var thisInterval = setInterval(function(){
         $.ajax({
             type: "GET",
-            url: "http://10.10.2.221:8888/trunking_io/api/tempaccount/registered",
+            url: default_frifri_api + "tempaccount/registered",
             dataType: "json",
             contentType: "application/json"
         }).done(function(msg){
@@ -661,7 +662,7 @@ $(document).ready(function() {
                 $('#countdown-slide').delay(2000).animate({paddingLeft:'312px'},400, "swing", function(){
                     $.ajax({
                         type: "GET",
-                        url: "http://10.10.2.221:8888/trunking_io/api/tempaccount/remaining",
+                        url: default_frifri_api + "tempaccount/remaining",
                         dataType: "json",
                         contentType: "application/json"
                     }).done(function(msg){
