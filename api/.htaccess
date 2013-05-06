@@ -4,3 +4,9 @@ RewriteRule ^$ index.php [QSA,L]
 #RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php [QSA,L]
+
+<Files config.json>
+    Order allow,deny
+    Deny from all
+    Allow from 127.0.0.1
+</Files>
